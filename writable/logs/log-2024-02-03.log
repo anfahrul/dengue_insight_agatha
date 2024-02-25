@@ -1,0 +1,756 @@
+INFO - 2024-02-03 12:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 12:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 12:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 12:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:00:00 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 183.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:00:08 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_admin\peta_sebaran_balita.php on line 34.
+ 1 APPPATH\Views\dashboard_admin\peta_sebaran_balita.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\peta_sebaran_balita.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/peta_sebaran_balita', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(168): view('dashboard_admin/peta_sebaran_balita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->peta_balita()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:01:11 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 183.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:03:24 --> Invalid file: "dashboard_user/klasifikasi_user.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard_user/klasifikasi_user.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/klasifikasi_user', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(281): view('dashboard_user/klasifikasi_user', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->klasifikasi_user()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:03:29 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:05:34 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_admin\peta_sebaran_balita.php on line 34.
+ 1 APPPATH\Views\dashboard_admin\peta_sebaran_balita.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\peta_sebaran_balita.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/peta_sebaran_balita', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(168): view('dashboard_admin/peta_sebaran_balita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->peta_balita()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:06:20 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 183.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:06:20 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 183.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:06:29 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:06:49 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:07:07 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 183.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:07:19 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 183.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:07:51 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 183.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:07:57 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 183.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:08:05 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:08:08 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:20:03 --> Undefined variable $array_c1x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 183.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c1x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 183)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:21:16 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:21:46 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:21:51 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:21:53 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:24:32 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:01 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:08 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:30 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 189.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:33 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_admin\peta_sebaran_balita.php on line 34.
+ 1 APPPATH\Views\dashboard_admin\peta_sebaran_balita.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\peta_sebaran_balita.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/peta_sebaran_balita', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(168): view('dashboard_admin/peta_sebaran_balita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->peta_balita()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:57 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:25:59 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_user\peta_sebaran_user.php on line 34.
+ 1 APPPATH\Views\dashboard_user\peta_sebaran_user.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\peta_sebaran_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/peta_sebaran_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(304): view('dashboard_user/peta_sebaran_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->peta_sebaran_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:26:13 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:27:24 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_admin\hasil_cluster.php on line 189.
+ 1 APPPATH\Views\dashboard_admin\hasil_cluster.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_admin\\hasil_cluster.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\hasil_cluster.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/hasil_cluster', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(160): view('dashboard_admin/hasil_cluster', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->hasil_cluster()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:27:28 --> array_combine(): Argument #1 ($keys) must be of type array, null given
+in APPPATH\Views\dashboard_admin\peta_sebaran_balita.php on line 34.
+ 1 APPPATH\Views\dashboard_admin\peta_sebaran_balita.php(34): array_combine(null, null)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_admin\\peta_sebaran_balita.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_admin/peta_sebaran_balita', [], true)
+ 5 APPPATH\Controllers\DashboardControllerAdmin.php(168): view('dashboard_admin/peta_sebaran_balita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardControllerAdmin->peta_balita()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardControllerAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:42:01 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:48:51 --> Call to undefined function dump()
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 18.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:49:47 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 191.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(191): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 191)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:51:34 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 193.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 193)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:51:50 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 193.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 193)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:52:45 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 193.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 193)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:53:28 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 191.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(191): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 191)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:54:12 --> Cannot access offset of type string on string
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 95.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:54:29 --> Cannot access offset of type string on string
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 95.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:54:43 --> Cannot access offset of type string on string
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 94.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:54:44 --> Cannot access offset of type string on string
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 94.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 4 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:54:52 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 189.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:55:22 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 191.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(191): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 191)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:56:21 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 192.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 192)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:56:23 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 192.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 192)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:56:29 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 192.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 192)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-03 13:56:32 --> Undefined variable $array_c2x
+in APPPATH\Views\dashboard_user\identifikasi_user.php on line 192.
+ 1 APPPATH\Views\dashboard_user\identifikasi_user.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $array_c2x', 'APPPATH\\Views\\dashboard_user\\identifikasi_user.php', 192)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard_user\\identifikasi_user.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('dashboard_user/identifikasi_user', [], true)
+ 5 APPPATH\Controllers\DashboardController.php(273): view('dashboard_user/identifikasi_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DashboardController->identifikasi_user()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-03 13:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 13:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 14:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 14:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
