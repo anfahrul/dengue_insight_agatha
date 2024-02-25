@@ -28,6 +28,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.awesome-markers/dist/leaflet.awesome-markers.css" />
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <style>
         #map {
             height: 500px;
@@ -90,6 +92,20 @@
                 <a class="nav-link" href="<?= base_url('admin/data/kecamatan'); ?>">
                     <i class="fa-solid fa-square-plus"></i>
                     <span>Data Kecamatan</span></a>
+            </li>
+            
+            <!-- Nav Item - Data Pengguna -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/data/puskesmas'); ?>">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span>Data Puskesmas</span></a>
+            </li>
+            
+            <!-- Nav Item - Data Pengguna -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/data/kelurahan'); ?>">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span>Data Kelurahan</span></a>
             </li>
 
             <!-- Nav Item -  Data Balita -->
@@ -298,6 +314,8 @@
     <script src="<?= base_url('chart.js/dist/chart.umd.js') ?>"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet.awesome-markers/dist/leaflet.awesome-markers.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script>
         $(document).ready(function() {

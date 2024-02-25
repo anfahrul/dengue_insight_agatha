@@ -7,6 +7,8 @@ use App\Models\m_Data;
 use App\Models\m_Cluster;
 use App\Models\m_Progres;
 use App\Models\m_Kecamatan;
+use App\Models\m_Puskesmas;
+use App\Models\m_Kelurahan;
 
 class DashboardControllerAdmin extends BaseController
 {
@@ -15,6 +17,8 @@ class DashboardControllerAdmin extends BaseController
     protected $m_Cluster;
     protected $m_Progres;
     protected $m_Kecamatan;
+    protected $m_Puskesmas;
+    protected $m_Kelurahan;
 
     public function __construct()
     {
@@ -23,6 +27,8 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Cluster = new m_Cluster();
         $this->m_Progres = new m_Progres();
         $this->m_Kecamatan = new m_Kecamatan();
+        $this->m_Puskesmas = new m_Puskesmas();
+        $this->m_Kelurahan = new m_Kelurahan();
     }
 
 
@@ -162,7 +168,6 @@ class DashboardControllerAdmin extends BaseController
         return view('dashboard_admin/data_kecamatan', $data);
     }
 
-
     public function add_kecamatan()
     {
         $data = [
@@ -172,7 +177,6 @@ class DashboardControllerAdmin extends BaseController
         return view('dashboard_admin/add_kecamatan', $data);
     }
     
-
     public function proses_add_kecamatan()
     {
         $validation =  \Config\Services::validation();
@@ -231,6 +235,200 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Kecamatan->delete($id);
         session()->setFlashdata('success', 'Berhasil menghapus data');
         return redirect()->to(base_url('admin/data/kecamatan'));
+    }
+
+
+    // puskesmas
+    public function data_puskesmas()
+    {
+        $data = [
+            'title' => 'Data Puskesmas',
+            'data' => $this->m_Puskesmas->findAll(),
+            'modelKecamatan' => $this->m_Kecamatan,
+        ];
+        return view('dashboard_admin/data_puskesmas', $data);
+    }
+
+    public function add_puskesmas()
+    {
+        $data = [
+            'title' => 'add puskesmas',
+            'kecamatan' => $this->m_Kecamatan->findAll(),
+        ];
+        return view('dashboard_admin/add_puskesmas', $data);
+    }
+
+    public function proses_add_puskesmas()
+    {
+        $validation =  \Config\Services::validation();
+
+        // Aturan validasi
+        $validation->setRules([
+            'nama_puskesmas' => [
+                'label' => 'nama_puskesmas',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+            'kecamatan' => [
+                'label' => 'kecamatan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+        ]);
+
+        // Mengecek apakah data yang diterima valid atau tidak
+        if ($validation->withRequest($this->request)->run()) {
+            $data = [
+                'nama_puskesmas' => $this->request->getPost('nama_puskesmas'),
+                'id_kecamatan' => $this->request->getPost('kecamatan'),
+            ];
+
+            $this->m_Puskesmas->insert($data);
+            session()->setFlashdata('success', 'Berhasil menambah data');
+            return redirect()->to(base_url('admin/data/puskesmas'));
+        } else {
+            // Data tidak valid, tampilkan pesan kesalahan
+            $errors = $validation->getErrors();
+            session()->setFlashdata('error', $errors);
+            return redirect()->to(base_url('admin/dashboard/add_puskesmas'));
+        }
+    }
+
+    public function edit_data_puskesmas($id)
+    {
+        $data = [
+            'title' => 'Edit Data Puskesmas',
+            'data' => $this->m_Puskesmas->find($id),
+            'modelKecamatan' => $this->m_Kecamatan,
+            'kecamatan' => $this->m_Kecamatan->findAll(),
+        ];
+        return view('dashboard_admin/edit_data_puskesmas', $data);
+    }
+
+    public function proses_edit_data_puskesmas()
+    {
+        $id = $this->request->getPost('id_puskesmas');
+        $data = [
+            'nama_puskesmas' => $this->request->getPost('nama_puskesmas'),
+            'id_kecamatan' => $this->request->getPost('kecamatan'),
+        ];
+        $this->m_Puskesmas->update($id, $data);
+        session()->setFlashdata('success', 'Berhasil mengubah data');
+        return redirect()->to(base_url('admin/data/puskesmas '));
+    }
+
+    public function delete_puskesmas($id)
+    {
+        $this->m_Puskesmas->delete($id);
+        session()->setFlashdata('success', 'Berhasil menghapus data');
+        return redirect()->to(base_url('admin/data/puskesmas'));
+    }
+
+    // kelurahan
+    public function data_kelurahan()
+    {
+        $data = [
+            'title' => 'Data Kelurahan',
+            'data' => $this->m_Kelurahan->findAll(),
+            'modelKecamatan' => $this->m_Kecamatan,
+            'modelPuskesmas' => $this->m_Puskesmas,
+        ];
+        return view('dashboard_admin/data_kelurahan', $data);
+    }
+
+    public function add_kelurahan()
+    {
+        $data = [
+            'title' => 'add kelurahan',
+            'kecamatan' => $this->m_Kecamatan->findAll(),
+            'puskesmas' => $this->m_Puskesmas->findAll(),
+        ];
+        return view('dashboard_admin/add_kelurahan', $data);
+    }
+
+    public function proses_add_kelurahan()
+    {
+        $validation =  \Config\Services::validation();
+
+        // Aturan validasi
+        $validation->setRules([
+            'nama_kelurahan' => [
+                'label' => 'nama_kelurahan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+            'kecamatan' => [
+                'label' => 'kecamatan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+            'puskesmas' => [
+                'label' => 'puskesmas',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+        ]);
+
+        // Mengecek apakah data yang diterima valid atau tidak
+        if ($validation->withRequest($this->request)->run()) {
+            $data = [
+                'nama_kelurahan' => $this->request->getPost('nama_kelurahan'),
+                'id_kecamatan' => $this->request->getPost('kecamatan'),
+                'id_puskesmas' => $this->request->getPost('puskesmas'),
+            ];
+
+            $this->m_Kelurahan->insert($data);
+            session()->setFlashdata('success', 'Berhasil menambah data');
+            return redirect()->to(base_url('admin/data/kelurahan'));
+        } else {
+            // Data tidak valid, tampilkan pesan kesalahan
+            $errors = $validation->getErrors();
+            session()->setFlashdata('error', $errors);
+            return redirect()->to(base_url('admin/dashboard/add_puskesmas'));
+        }
+    }
+
+    public function edit_data_kelurahan($id)
+    {
+        $data = [
+            'title' => 'Edit Data Kelurahan',
+            'data' => $this->m_Kelurahan->find($id),
+            'modelKecamatan' => $this->m_Kecamatan,
+            'kecamatan' => $this->m_Kecamatan->findAll(),
+            'modelPuskesmas' => $this->m_Puskesmas,
+            'puskesmas' => $this->m_Puskesmas->findAll(),
+        ];
+        return view('dashboard_admin/edit_data_kelurahan', $data);
+    }
+
+    public function proses_edit_data_kelurahan()
+    {
+        $id = $this->request->getPost('id_kelurahan');
+        $data = [
+            'nama_kelurahan' => $this->request->getPost('nama_kelurahan'),
+            'id_kecamatan' => $this->request->getPost('kecamatan'),
+            'id_puskesmas' => $this->request->getPost('puskesmas'),
+        ];
+        $this->m_Kelurahan->update($id, $data);
+        session()->setFlashdata('success', 'Berhasil mengubah data');
+        return redirect()->to(base_url('admin/data/kelurahan '));
+    }
+
+    public function delete_kelurahan($id)
+    {
+        $this->m_Kelurahan->delete($id);
+        session()->setFlashdata('success', 'Berhasil menghapus data');
+        return redirect()->to(base_url('admin/data/kelurahan'));
     }
 
 

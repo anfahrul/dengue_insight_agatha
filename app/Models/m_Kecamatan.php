@@ -10,4 +10,11 @@ class m_Kecamatan extends Model
     protected $primaryKey = 'id_kecamatan';
     protected $returnType = 'array';
     protected $allowedFields = ['nama_kecamatan'];
+
+    public function getNamaKecamatanById($id_kecamatan)
+    {
+        $kecamatan = $this->find($id_kecamatan);
+
+        return $kecamatan ? $kecamatan['nama_kecamatan'] : '';
+    }
 }

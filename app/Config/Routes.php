@@ -78,6 +78,20 @@ $routes->group('admin', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('dashboard/edit_data/kecamatan/(:num)', 'DashboardControllerAdmin::edit_data_kecamatan/$1');
     $routes->post('dashboard/edit_data/kecamatan/proses', 'DashboardControllerAdmin::proses_edit_data_kecamatan');
     $routes->get('dashboard/delete/kecamatan/(:num)', 'DashboardControllerAdmin::delete_kecamatan/$1');
+    
+    $routes->get('data/puskesmas', 'DashboardControllerAdmin::data_puskesmas');
+    $routes->get('dashboard/add_puskesmas', 'DashboardControllerAdmin::add_puskesmas');
+    $routes->post('dashboard/add_puskesmas/proses', 'DashboardControllerAdmin::proses_add_puskesmas');
+    $routes->get('dashboard/edit_data/puskesmas/(:num)', 'DashboardControllerAdmin::edit_data_puskesmas/$1');
+    $routes->post('dashboard/edit_data/puskesmas/proses', 'DashboardControllerAdmin::proses_edit_data_puskesmas');
+    $routes->get('dashboard/delete/puskesmas/(:num)', 'DashboardControllerAdmin::delete_puskesmas/$1');
+    
+    $routes->get('data/kelurahan', 'DashboardControllerAdmin::data_kelurahan');
+    $routes->get('dashboard/add_kelurahan', 'DashboardControllerAdmin::add_kelurahan');
+    $routes->post('dashboard/add_kelurahan/proses', 'DashboardControllerAdmin::proses_add_kelurahan');
+    $routes->get('dashboard/edit_data/kelurahan/(:num)', 'DashboardControllerAdmin::edit_data_kelurahan/$1');
+    $routes->post('dashboard/edit_data/kelurahan/proses', 'DashboardControllerAdmin::proses_edit_data_kelurahan');
+    $routes->get('dashboard/delete/kelurahan/(:num)', 'DashboardControllerAdmin::delete_kelurahan/$1');
 
     $routes->get('dashboard/hasil/cluster', 'DashboardControllerAdmin::hasil_cluster');
     $routes->get('peta/balita', 'DashboardControllerAdmin::peta_balita');
