@@ -44,15 +44,16 @@ $routes->get('/logout/admin', 'HomeController::login');
 // route dashboard user
 $routes->group('', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('/dashboard', 'DashboardController::index');
+
     $routes->get('/dashboard/user', 'DashboardController::dashboard_user');
     $routes->get('/profile/user', 'DashboardController::profile_user');
-    $routes->get('/dashboard/tambah_data', 'DashboardController::tambah_data');
+
     $routes->get('dashboard/data_dbd', 'DashboardController::data_dbd');
     $routes->post('/dashboard/data_dbd/get_by_year', 'DashboardController::data_dbd_get_by_year');
-    $routes->post('/dashboard/tambah_data/proses', 'DashboardController::proses_tambah_data');
     $routes->get('/dashboard/edit_data/(:num)', 'DashboardController::edit_data/$1');
     $routes->post('/dashboard/edit_data/proses', 'DashboardController::proses_edit_data');
     $routes->get('/dashboard/hapus_data/(:num)', 'DashboardController::hapus_data/$1');
+
     $routes->post('/dashboard/cluster', 'DashboardController::cluster');
     $routes->get('/dashboard/identifikasi', 'DashboardController::identifikasi_user');
     $routes->get('/dashboard/klasifikasi', 'DashboardController::klasifikasi_user');

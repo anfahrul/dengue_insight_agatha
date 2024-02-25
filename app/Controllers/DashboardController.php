@@ -229,43 +229,28 @@ class DashboardController extends BaseController
         $data = [
             'title' => 'Edit Data',
             'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Data->find($id),
+            'data' => $this->m_DataDBD->find($id),
+            'modelKelurahan' => $this->m_Kelurahan,
         ];
         return view('dashboard_user/edit_data', $data);
     }
 
     public function proses_edit_data()
     {
-        $id = $this->request->getPost('id_data');
+        $id = $this->request->getPost('id_data_dbd');
         $data = [
-            'nik' => $this->request->getPost('nik'),
-            'nama_anak' => $this->request->getPost('nama_anak'),
-            'tgl_lahir' => $this->request->getPost('tgl_lahir'),
-            'jk' => $this->request->getPost('jk'),
-            'nama_ortu' => $this->request->getPost('nama_ortu'),
-            'tgl_ukur' => $this->request->getPost('tgl_ukur'),
-            'tinggi_anak' => $this->request->getPost('tinggi_anak'),
-            'berat_anak' => $this->request->getPost('berat_anak'),
-            'lat' => $this->request->getPost('lat'),
-            'long' => $this->request->getPost('long'),
+            'jumlah_penduduk' => $this->request->getPost('jumlah_penduduk'),
+            'perempuan' => $this->request->getPost('perempuan'),
+            'laki_laki' => $this->request->getPost('laki_laki'),
+            'balita' => $this->request->getPost('balita'),
+            'remaja' => $this->request->getPost('remaja'),
+            'dewasa' => $this->request->getPost('dewasa'),
+            'jumlah_kasus' => $this->request->getPost('jumlah_kasus'),
         ];
 
-        $nik = $this->m_Data->where('nik', $this->request->getPost('nik'))->first();
-
-        $progres = [
-            'nik' => $nik['nik'],
-            'nama_anak' => $nik['nama_anak'],
-            'tgl_lahir' => $nik['tgl_lahir'],
-            'tgl_ukur' => $nik['tgl_ukur'],
-            'tinggi_badan' => $nik['tinggi_anak'],
-            'berat_badan' => $nik['berat_anak'],
-        ];
-
-        $this->m_Progres->insert($progres);
-
-        $this->m_Data->update($id, $data);
+        $this->m_DataDBD->update($id, $data);
         session()->setFlashdata('success', 'Berhasil mengubah data');
-        return redirect()->to(base_url('dashboard/data_balita'));
+        return redirect()->to(base_url('dashboard/data_dbd'));
     }
 
     public function hapus_data($id)
