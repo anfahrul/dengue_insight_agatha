@@ -47,7 +47,8 @@ $routes->group('', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('/dashboard/user', 'DashboardController::dashboard_user');
     $routes->get('/profile/user', 'DashboardController::profile_user');
     $routes->get('/dashboard/tambah_data', 'DashboardController::tambah_data');
-    $routes->get('dashboard/data_dbd', 'DashboardController::data_balita');
+    $routes->get('dashboard/data_dbd', 'DashboardController::data_dbd');
+    $routes->post('/dashboard/data_dbd/get_by_year', 'DashboardController::data_dbd_get_by_year');
     $routes->post('/dashboard/tambah_data/proses', 'DashboardController::proses_tambah_data');
     $routes->get('/dashboard/edit_data/(:num)', 'DashboardController::edit_data/$1');
     $routes->post('/dashboard/edit_data/proses', 'DashboardController::proses_edit_data');
@@ -92,6 +93,10 @@ $routes->group('admin', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('dashboard/edit_data/kelurahan/(:num)', 'DashboardControllerAdmin::edit_data_kelurahan/$1');
     $routes->post('dashboard/edit_data/kelurahan/proses', 'DashboardControllerAdmin::proses_edit_data_kelurahan');
     $routes->get('dashboard/delete/kelurahan/(:num)', 'DashboardControllerAdmin::delete_kelurahan/$1');
+    
+    $routes->get('data/tahun', 'DashboardControllerAdmin::data_tahun');
+    $routes->post('dashboard/add_tahun/proses', 'DashboardControllerAdmin::proses_add_tahun');
+    $routes->get('dashboard/delete/tahun/(:num)', 'DashboardControllerAdmin::delete_tahun/$1');
 
     $routes->get('dashboard/hasil/cluster', 'DashboardControllerAdmin::hasil_cluster');
     $routes->get('peta/balita', 'DashboardControllerAdmin::peta_balita');

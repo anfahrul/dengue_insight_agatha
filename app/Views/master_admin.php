@@ -107,6 +107,13 @@
                     <i class="fa-solid fa-square-plus"></i>
                     <span>Data Kelurahan</span></a>
             </li>
+            
+            <!-- Nav Item - Data Pengguna -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/data/tahun'); ?>">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span>Tahun Pengamatan</span></a>
+            </li>
 
             <!-- Nav Item -  Data Balita -->
             <li class="nav-item">

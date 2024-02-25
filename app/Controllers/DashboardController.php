@@ -7,6 +7,9 @@ use App\Models\m_User;
 use App\Models\m_Data;
 use App\Models\m_Cluster;
 use App\Models\m_Progres;
+use App\Models\m_DataDBD;
+use App\Models\m_Kelurahan;
+use App\Models\m_Tahun;
 
 
 class DashboardController extends BaseController
@@ -15,6 +18,9 @@ class DashboardController extends BaseController
     protected $m_Data;
     protected $m_Cluster;
     protected $m_Progres;
+    protected $m_DataDBD;
+    protected $m_Kelurahan;
+    protected $m_Tahun;
 
     public function __construct()
     {
@@ -22,6 +28,9 @@ class DashboardController extends BaseController
         $this->m_Data = new m_Data();
         $this->m_Cluster = new m_Cluster();
         $this->m_Progres = new m_Progres();
+        $this->m_DataDBD = new m_DataDBD();
+        $this->m_Kelurahan = new m_Kelurahan();
+        $this->m_Tahun = new m_Tahun();
     }
     public function index()
     {
@@ -57,6 +66,41 @@ class DashboardController extends BaseController
             'cluster' => $this->m_Cluster->first(),
         ];
         return view('dashboard_user/data_balita', $data);
+    }
+    
+    public function data_dbd()
+    {
+        $lastInsertedID = $this->m_Tahun->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+
+        $data = [
+            'title' => 'Data DBD',
+            'data' => $this->m_DataDBD->where('id_tahun', $lastInsertedID->id_tahun)->findAll(),
+            'modelKelurahan' => $this->m_Kelurahan,
+            'modelTahun' => $this->m_Tahun,
+            'tahun' => $this->m_Tahun->findAll(),
+            'year' => $lastInsertedID->id_tahun
+        ];
+
+        return view('dashboard_user/data_dbd', $data);
+    }
+    
+    public function data_dbd_get_by_year()
+    {
+        $yearSelected = $this->request->getPost('tahun');
+
+        $data = [
+            'title' => 'Data DBD',
+            'data' => $this->m_DataDBD->where('id_tahun', $yearSelected)->findAll(),
+            'modelKelurahan' => $this->m_Kelurahan,
+            'modelTahun' => $this->m_Tahun,
+            'tahun' => $this->m_Tahun->findAll(),
+            'year' => $yearSelected
+        ];
+
+        return view('dashboard_user/data_dbd', $data);
     }
 
     public function tambah_data()

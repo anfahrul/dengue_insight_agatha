@@ -10,4 +10,11 @@ class m_Kelurahan extends Model
     protected $primaryKey = 'id_kelurahan';
     protected $returnType = 'array';
     protected $allowedFields = ['nama_kelurahan', 'id_kecamatan', 'id_puskesmas'];
+
+    public function getNamaKelurahanById($id_kelurahan)
+    {
+        $kelurahan = $this->find($id_kelurahan);
+
+        return $kelurahan ? $kelurahan['nama_kelurahan'] : '';
+    }
 }

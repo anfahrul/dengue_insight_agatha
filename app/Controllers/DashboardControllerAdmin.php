@@ -9,6 +9,8 @@ use App\Models\m_Progres;
 use App\Models\m_Kecamatan;
 use App\Models\m_Puskesmas;
 use App\Models\m_Kelurahan;
+use App\Models\m_Tahun;
+use App\Models\m_DataDBD;
 
 class DashboardControllerAdmin extends BaseController
 {
@@ -19,6 +21,8 @@ class DashboardControllerAdmin extends BaseController
     protected $m_Kecamatan;
     protected $m_Puskesmas;
     protected $m_Kelurahan;
+    protected $m_Tahun;
+    protected $m_DataDBD;
 
     public function __construct()
     {
@@ -29,6 +33,8 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Kecamatan = new m_Kecamatan();
         $this->m_Puskesmas = new m_Puskesmas();
         $this->m_Kelurahan = new m_Kelurahan();
+        $this->m_Tahun = new m_Tahun();
+        $this->m_DataDBD = new m_DataDBD();
     }
 
 
@@ -429,6 +435,74 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Kelurahan->delete($id);
         session()->setFlashdata('success', 'Berhasil menghapus data');
         return redirect()->to(base_url('admin/data/kelurahan'));
+    }
+
+
+    // tahun
+    public function data_tahun()
+    {
+        $data = [
+            'title' => 'Data Tahun',
+            'data' => $this->m_Tahun->findAll(),
+        ];
+        return view('dashboard_admin/data_tahun', $data);
+    }
+
+    public function proses_add_tahun()
+    {
+        $validation =  \Config\Services::validation();
+
+        // Aturan validasi
+        $validation->setRules([
+            'tahun' => [
+                'label' => 'tahun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                ]
+            ],
+        ]);
+
+        // Mengecek apakah data yang diterima valid atau tidak
+        if ($validation->withRequest($this->request)->run()) {
+            $data = [
+                'tahun' => $this->request->getPost('tahun'),
+            ];
+            $this->m_Tahun->insert($data);
+            $insertedIDOfTheYear = $this->m_Tahun->insertID();
+            
+            $kelurahan = $this->m_Kelurahan->findAll();
+            foreach ($kelurahan as $kel) {
+                $data_dbd = [
+                    'id_kelurahan' => $kel['id_kelurahan'],
+                    'id_tahun' => $insertedIDOfTheYear,
+                    'jumlah_penduduk' => 0,
+                    'perempuan' => 0,
+                    'laki_laki' => 0,
+                    'balita' => 0,
+                    'remaja' => 0,
+                    'dewasa' => 0,
+                    'jumlah_kasus' => 0,
+                ];
+                
+                $this->m_DataDBD->insert($data_dbd);
+            };
+            
+            session()->setFlashdata('success', 'Berhasil menambah data');
+            return redirect()->to(base_url('admin/data/tahun'));
+        } else {
+            // Data tidak valid, tampilkan pesan kesalahan
+            $errors = $validation->getErrors();
+            session()->setFlashdata('error', $errors);
+            return redirect()->to(base_url('admin/data/tahun'));
+        }
+    }
+
+    public function delete_tahun($id)
+    {
+        $this->m_Tahun->delete($id);
+        session()->setFlashdata('success', 'Berhasil menghapus data');
+        return redirect()->to(base_url('admin/data/tahun'));
     }
 
 
