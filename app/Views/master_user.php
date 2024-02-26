@@ -87,6 +87,13 @@
 
             <!-- Nav Item - Identifikasi -->
             <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('/dashboard/cluster'); ?>">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Inisiasi Centroid Awal</span></a>
+            </li>
+            
+            <!-- Nav Item - Identifikasi -->
+            <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/dashboard/identifikasi'); ?>">
                     <i class="fa-solid fa-layer-group"></i>
                     <span>Identifikasi</span></a>

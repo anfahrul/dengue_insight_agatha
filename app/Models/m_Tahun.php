@@ -20,6 +20,6 @@ class m_Tahun extends Model
 
     public function getOrderById()
     {
-        return $this->orderBy('id_tahun', 'DESC');
+        return $this->orderBy('tahun', 'DESC');
     }
 }

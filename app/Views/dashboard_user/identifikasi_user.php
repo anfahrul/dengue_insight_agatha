@@ -1,34 +1,47 @@
 <?= $this->extend('master_user'); ?>
 
 <?= $this->section('content'); ?>
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">Identifikasi DBD</h1>
 
 <?php
+$c1a = $cluster->c1a;
+$c1b = $cluster->c1b;
+$c1c = $cluster->c1c;
+$c1d = $cluster->c1d;
+$c1e = $cluster->c1e;
+$c1f = $cluster->c1f;
+$c2a = $cluster->c2a;
+$c2b = $cluster->c2b;
+$c2c = $cluster->c2c;
+$c2d = $cluster->c2d;
+$c2e = $cluster->c2e;
+$c2f = $cluster->c2f;
+$c3a = $cluster->c3a;
+$c3b = $cluster->c3b;
+$c3c = $cluster->c3c;
+$c3d = $cluster->c3d;
+$c3e = $cluster->c3e;
+$c3f = $cluster->c3f;
 
-//mengambil data c1x, c1y, c2x, c2y dari database
-$c1x = $cluster['c1x'];
-$c2x = $cluster['c2x'];
-$c3x = $cluster['c3x'];
-$c1y = $cluster['c1y'];
-$c2y = $cluster['c2y'];
-$c3y = $cluster['c3y'];
-$c1z = $cluster['c1z'];
-$c2z = $cluster['c2z'];
-$c3z = $cluster['c3z'];
-
-// dd($cluster);
-
-$iterasi1 = [
-    'c1x' => $c1x,
-    'c2x' => $c2x,
-    'c3x' => $c3x,
-    'c1y' => $c1y,
-    'c2y' => $c2y,
-    'c3y' => $c3y,
-    'c1z' => $c1z,
-    'c2z' => $c2z,
-    'c3z' => $c3z,
-];
-// dd($iterasi1);
+$c1a_previously = 0;
+$c1b_previously = 0;
+$c1c_previously = 0;
+$c1d_previously = 0;
+$c1e_previously = 0;
+$c1f_previously = 0;
+$c2a_previously = 0;
+$c2b_previously = 0;
+$c2c_previously = 0;
+$c2d_previously = 0;
+$c2e_previously = 0;
+$c2f_previously = 0;
+$c3a_previously = 0;
+$c3b_previously = 0;
+$c3c_previously = 0;
+$c3d_previously = 0;
+$c3e_previously = 0;
+$c3f_previously = 0;
 
 $iterasi = 1;
 
@@ -36,543 +49,280 @@ $jumlah_c1 = 0;
 $jumlah_c2 = 0;
 $jumlah_c3 = 0;
 
-?>
+$array_c1 = [];
+$array_c2 = [];
+$array_c3 = [];
 
-<!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Identifikasi Balita</h1>
+$pembagian_cluster_seluruh_iterasi = [];
 
-<!-- DataTales Example -->
-
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="font-weight-bold text-utama">Iterasi ke
-            <?= $iterasi ?>
-        </h6>
-        <p>Pusat Cluster Ke-1 : {
-            <?= $c1x ?> ,
-            <?= $c1y ?> ,
-            <?= $c1z ?> }
+while (true) { ?>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="font-weight-bold text-utama">Iterasi ke
+                <?= $iterasi ?>
+            </h6>
+            <p>Pusat Cluster 1: {
+                <?= number_format($c1a, 2) ?>, <?= number_format($c1b, 2)  ?>, <?= number_format($c1c, 2)  ?>, <?= number_format($c1d, 2)  ?>, <?= number_format($c1e, 2)  ?>, <?= number_format($c1f, 2)  ?> 
+            }
         </p>
-        <p>Pusat Cluster Ke-2 : {
-            <?= $c2x ?> ,
-            <?= $c2y ?> ,
-            <?= $c2z ?> }
+        <p>Pusat Cluster 2: {
+                <?= number_format($c2a, 2) ?>, <?= number_format($c2b, 2)  ?>, <?= number_format($c2c, 2)  ?>, <?= number_format($c2d, 2)  ?>, <?= number_format($c2e, 2)  ?>, <?= number_format($c2f, 2)  ?> 
+            }
         </p>
-        <p>Pusat Cluster Ke-3 : {
-            <?= $c3x ?> ,
-            <?= $c3y ?> ,
-            <?= $c3z ?> }
-        </p>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="display table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead class="text-center">
-                    <tr>
-                        <th>No</th>
-                        <th>Nik</th>
-                        <th>Nama Anak</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Usia (Bulan)</th>
-                        <th>TB</th>
-                        <th>BB</th>
-                        <th>C1 (Normal)</th>
-                        <th>C2 (Kurang)</th>
-                        <th>C3 (Lebih)</th>
-                        <th>C</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <?php $no = 1;
-                    foreach ($data as $d) : ?>
-                        <tr>
-                            <td>
-                                <?= $no++ ?>
-                            </td>
-                            <td>
-                                <?= $d['nik'] ?>
-                            </td>
-                            <td>
-                                <?= $d['nama_anak'] ?>
-                            </td>
-                            <td>
-                                <?php
-                                $originalDate = ($d['tgl_lahir']);
-                                $newDate = date("d-m-Y", strtotime($originalDate));
-                                echo $newDate;
-                                ?>
-                            </td>
-                            <td class='text-center'>
-                                <?php
-                                $tgl1 = strtotime($d['tgl_ukur']);
-                                $tgl2 = strtotime($d['tgl_lahir']);
-
-                                $jarak = $tgl1 - $tgl2;
-
-                                $bulan = $jarak / 60 / 60 / 24 / 31;
-                                ?>
-                                <?= ceil($bulan) ?>
-
-                            </td>
-                            <td>
-                                <?= $d['tinggi_anak'] ?>
-                            </td>
-                            <td>
-                                <?= $d['berat_anak'] ?>
-                            </td>
-
-                            <?php
-                            $x = ceil($bulan);
-                            $y = $d['berat_anak'];
-                            $z = $d['tinggi_anak'];
-                            $c1 = sqrt(pow(($x - $c1x), 2) + pow(($y - $c1y), 2) + pow(($z - $c1z), 2));
-                            $c2 = sqrt(pow(($x - $c2x), 2) + pow(($y - $c2y), 2) + pow(($z - $c2z), 2));
-                            $c3 = sqrt(pow(($x - $c3x), 2) + pow(($y - $c3y), 2) + pow(($z - $c3z), 2));
-
-
-                            if ($c1 < $c2 and $c1 < $c3) {
-                                $ketmin = 'C1';
-                                $jumlah_c1++;
-                                $array_c1x[] = $x;
-                                $array_c1y[] = $y;
-                                $array_c1z[] = $z;
-                            } elseif ($c2 < $c1 and $c2 < $c3) {
-                                $ketmin = 'C2';
-                                $jumlah_c2++;
-                                $array_c2x[] = $x;
-                                $array_c2y[] = $y;
-                                $array_c2z[] = $z;
-                            } else {
-                                $ketmin = 'C3';
-                                $jumlah_c3++;
-                                $array_c3x[] = $x;
-                                $array_c3y[] = $y;
-                                $array_c3z[] = $z;
-                            }
-
-                            ?>
-
-                            <td>
-                                <?= number_format($c1, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c2, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c3, 2) ?>
-                            </td>
-                            <td>
-                                <?= $ketmin ?>
-                            </td>
-                        <?php endforeach; ?>
-
-                </tbody>
-            </table>
+        <p>Pusat Cluster 3: {
+                <?= number_format($c3a, 2) ?>, <?= number_format($c3b, 2)  ?>, <?= number_format($c3c, 2)  ?>, <?= number_format($c3d, 2)  ?>, <?= number_format($c3e, 2)  ?>, <?= number_format($c3f, 2)  ?> 
+            }
+            </p>
         </div>
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <canvas id="myChart1"></canvas>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="display table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="text-center">
+                        <tr>
+                            <th>No</th>
+                            <th>Kelurahan</th>
+                            <th>Total Kasus</th>
+                            <th>Remaja</th>
+                            <th>Wanita</th>
+                            <th>Pria</th>
+                            <th>Balita</th>
+                            <th>Orang Dewasa</th>
+                            <th>d(k,c1)</th>
+                            <th>d(k,c2)</th>
+                            <th>d(k,c3)</th>
+                            <th>Cluster</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <?php $no = 1;
+                        foreach ($data as $dat) : ?>
+                            <tr>
+                                <td>
+                                    <?= $no++ ?>
+                                </td>
+                                <td>
+                                    <?= $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']); ?>
+                                </td>
+                                <td>
+                                    <?= $dat['jumlah_kasus'] ?>
+                                </td>
+                                <td>
+                                    <?= $dat['remaja'] ?>
+                                </td>
+                                <td>
+                                    <?= $dat['perempuan'] ?>
+                                </td>
+                                <td>
+                                    <?= $dat['laki_laki'] ?>
+                                </td>
+                                <td>
+                                    <?= $dat['balita'] ?>
+                                </td>
+                                <td>
+                                    <?= $dat['dewasa'] ?>
+                                </td>
+
+                                <?php
+                                    $a = $dat['jumlah_kasus'];
+                                    $b = $dat['remaja'];
+                                    $c = $dat['perempuan'];
+                                    $d = $dat['laki_laki'];
+                                    $e = $dat['balita'];
+                                    $f = $dat['dewasa'];
+                                    $c1 = sqrt(pow(($a - $c1a), 2) + pow(($b - $c1b), 2) + pow(($c - $c1c), 2) + pow(($d - $c1d), 2) + pow(($e - $c1e), 2) + pow(($f - $c1f), 2));
+                                    $c2 = sqrt(pow(($a - $c2a), 2) + pow(($b - $c2b), 2) + pow(($c - $c2c), 2) + pow(($d - $c2d), 2) + pow(($e - $c2e), 2) + pow(($f - $c2f), 2));
+                                    $c3 = sqrt(pow(($a - $c3a), 2) + pow(($b - $c3b), 2) + pow(($c - $c3c), 2) + pow(($d - $c3d), 2) + pow(($e - $c3e), 2) + pow(($f - $c3f), 2));
+                                    
+                                    if ($c1 < $c2 and $c1 < $c3) {
+                                        $ketmin = 'C1';
+                                        $jumlah_c1++;
+
+                                        $newData = [
+                                            'a' => $a,
+                                            'b' => $b,
+                                            'c' => $c,
+                                            'd' => $d,
+                                            'e' => $e,
+                                            'f' => $f,
+                                        ];
+                                        array_push($array_c1, $newData);
+                                    } elseif ($c2 < $c1 and $c2 < $c3) {
+                                        $ketmin = 'C2';
+                                        $jumlah_c2++;
+                                        
+                                        $newData = [
+                                            'a' => $a,
+                                            'b' => $b,
+                                            'c' => $c,
+                                            'd' => $d,
+                                            'e' => $e,
+                                            'f' => $f
+                                        ];
+                                        array_push($array_c2, $newData);
+                                    } else {
+                                        $ketmin = 'C3';
+                                        $jumlah_c3++;
+                                        
+                                        $newData = [
+                                            'a' => $a,
+                                            'b' => $b,
+                                            'c' => $c,
+                                            'd' => $d,
+                                            'e' => $e,
+                                            'f' => $f
+                                        ];
+                                        array_push($array_c3, $newData);
+                                    }
+                                ?>
+
+                                <td>
+                                    <?= number_format($c1, 2) ?>
+                                </td>
+                                <td>
+                                    <?= number_format($c2, 2) ?>
+                                </td>
+                                <td>
+                                    <?= number_format($c3, 2) ?>
+                                </td>
+                                <td>
+                                    <?= $ketmin ?>
+                                </td>
+                            <?php endforeach; ?>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-10 mx-auto">
+                    <!-- <canvas id="myChart"></canvas> -->
+                    <?php $chartId = "myChart" . $iterasi; ?>
+                    <canvas id="<?= $chartId ?>"></canvas>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<?php
-$i1_c1 = $jumlah_c1;
-$i1_c2 = $jumlah_c2;
-$i1_c3 = $jumlah_c3;
+    <?php
+    $pembagian_cluster_iterasi_ke_i = [
+        'c1' => $jumlah_c1, 
+        'c2' => $jumlah_c2, 
+        'c3' => $jumlah_c3, 
+    ];
+    array_push($pembagian_cluster_seluruh_iterasi, $pembagian_cluster_iterasi_ke_i);
 
+    $c1a_previously = $c1a;
+    $c1b_previously = $c1b;
+    $c1c_previously = $c1c;
+    $c1d_previously = $c1d;
+    $c1e_previously = $c1e;
+    $c1f_previously = $c1f;
+    $c2a_previously = $c2a;
+    $c2b_previously = $c2b;
+    $c2c_previously = $c2c;
+    $c2d_previously = $c2d;
+    $c2e_previously = $c2e;
+    $c2f_previously = $c2f;
+    $c3a_previously = $c3a;
+    $c3b_previously = $c3b;
+    $c3c_previously = $c3c;
+    $c3d_previously = $c3d;
+    $c3e_previously = $c3e;
+    $c3f_previously = $c3f;
 
-$iterasic1 = [
-    'c1x' => $array_c1x,
-    'c1y' => $array_c1y,
-    'c1z' => $array_c1z,
-];
+    $c1a = 0;
+    $c1b = 0;
+    $c1c = 0;
+    $c1d = 0;
+    $c1e = 0;
+    $c1f = 0;
+    $c2a = 0;
+    $c2b = 0;
+    $c2c = 0;
+    $c2d = 0;
+    $c2e = 0;
+    $c2f = 0;
+    $c3a = 0;
+    $c3b = 0;
+    $c3c = 0;
+    $c3d = 0;
+    $c3e = 0;
+    $c3f = 0;
 
-$iterasic2 = [
-    'c2x' => $array_c2x,
-    'c2y' => $array_c2y,
-    'c2z' => $array_c2z,
-];
+    for ($i = 0; $i < $jumlah_c1; $i++) {
+        $c1a += $array_c1[$i]['a'];
+        $c1b += $array_c1[$i]['b'];
+        $c1c += $array_c1[$i]['c'];
+        $c1d += $array_c1[$i]['d'];
+        $c1e += $array_c1[$i]['e'];
+        $c1f += $array_c1[$i]['f'];
+    }
+    
+    for ($i = 0; $i < $jumlah_c2; $i++) {
+        $c2a += $array_c2[$i]['a'];
+        $c2b += $array_c2[$i]['b'];
+        $c2c += $array_c2[$i]['c'];
+        $c2d += $array_c2[$i]['d'];
+        $c2e += $array_c2[$i]['e'];
+        $c2f += $array_c2[$i]['f'];
+    }
+    
+    for ($i = 0; $i < $jumlah_c3; $i++) {
+        $c3a += $array_c3[$i]['a'];
+        $c3b += $array_c3[$i]['b'];
+        $c3c += $array_c3[$i]['c'];
+        $c3d += $array_c3[$i]['d'];
+        $c3e += $array_c3[$i]['e'];
+        $c3f += $array_c3[$i]['f'];
+    }
+    
+    $c1a /= $jumlah_c1;
+    $c1b /= $jumlah_c1;
+    $c1c /= $jumlah_c1;
+    $c1d /= $jumlah_c1;
+    $c1e /= $jumlah_c1;
+    $c1f /= $jumlah_c1;
+    $c2a /= $jumlah_c2;
+    $c2b /= $jumlah_c2;
+    $c2c /= $jumlah_c2;
+    $c2d /= $jumlah_c2;
+    $c2e /= $jumlah_c2;
+    $c2f /= $jumlah_c2;
+    $c3a /= $jumlah_c3;
+    $c3b /= $jumlah_c3;
+    $c3c /= $jumlah_c3;
+    $c3d /= $jumlah_c3;
+    $c3e /= $jumlah_c3;
+    $c3f /= $jumlah_c3;
 
-$iterasic3 = [
-    'c3x' => $array_c3x,
-    'c3y' => $array_c3y,
-    'c3z' => $array_c3z,
-];
+    $centroidAreEqual = true;
+    $groups = ['c1', 'c2', 'c3'];
+    $letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-session()->set('iterasic1', $iterasic1);
-session()->set('iterasic2', $iterasic2);
-session()->set('iterasic3', $iterasic3);
+    foreach ($groups as $group) {
+        foreach ($letters as $letter) {
+            $previouslyVariable = $group . $letter . '_previously';            
+            $currentVariable = $group . $letter;
+            
+            if ($$previouslyVariable !== $$currentVariable) {
+                $centroidAreEqual = false;
+                break 2;
+            }
+        }
+    }
+    if ($centroidAreEqual) {
+        break;
+    }
 
-$iterasi++;
-$c1x = array_sum($array_c1x) / $jumlah_c1;
-$c1y = array_sum($array_c1y) / $jumlah_c1;
-$c1z = array_sum($array_c1z) / $jumlah_c1;
-$c2x = array_sum($array_c2x) / $jumlah_c2;
-$c2y = array_sum($array_c2y) / $jumlah_c2;
-$c2z = array_sum($array_c2z) / $jumlah_c2;
-$c3x = array_sum($array_c3x) / $jumlah_c3;
-$c3y = array_sum($array_c3y) / $jumlah_c3;
-$c3z = array_sum($array_c3z) / $jumlah_c3;
+    $jumlah_c1 = 0;
+    $jumlah_c2 = 0;
+    $jumlah_c3 = 0;
 
-$jumlah_c1 = 0;
-$jumlah_c2 = 0;
-$jumlah_c3 = 0;
+    $array_c1 = [];
+    $array_c2 = [];
+    $array_c3 = [];
 
-$array_c1x = [];
-$array_c1y = [];
-$array_c1z = [];
-$array_c2x = [];
-$array_c2y = [];
-$array_c2z = [];
-$array_c3x = [];
-$array_c3y = [];
-$array_c3z = [];
-// dd($c1x);
-
-?>
-
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class=" font-weight-bold text-utama">Iterasi ke
-            <?= $iterasi ?>
-        </h6>
-        <p>Pusat Cluster Ke-1 : {
-            <?= number_format($c1x, 2) ?> ,
-            <?= number_format($c1y, 2) ?> ,
-            <?= number_format($c1z, 2) ?> }
-        </p>
-        <p>Pusat Cluster Ke-2 : {
-            <?= number_format($c2x, 2) ?> ,
-            <?= number_format($c2y, 2) ?> ,
-            <?= number_format($c2z, 2) ?> }
-        </p>
-        <p>Pusat Cluster Ke-3 : {
-            <?= number_format($c3x, 2) ?> ,
-            <?= number_format($c3y, 2) ?> ,
-            <?= number_format($c3z, 2) ?> }
-        </p>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="display table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead class="text-center">
-                    <tr>
-                        <th>No</th>
-                        <th>Nik</th>
-                        <th>Nama Anak</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Usia (Bulan)</th>
-                        <th>TB</th>
-                        <th>BB</th>
-                        <th>C1 (Normal)</th>
-                        <th>C2 (Kurang)</th>
-                        <th>C3 (Lebih)</th>
-                        <th>C</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <?php $no = 1;
-                    foreach ($data as $d) : ?>
-                        <tr>
-                            <td>
-                                <?= $no++ ?>
-                            </td>
-                            <td>
-                                <?= $d['nik'] ?>
-                            </td>
-                            <td>
-                                <?= $d['nama_anak'] ?>
-                            </td>
-                            <td>
-                                <?php
-                                $originalDate = ($d['tgl_lahir']);
-                                $newDate = date("d-m-Y", strtotime($originalDate));
-                                echo $newDate;
-                                ?>
-                            </td>
-                            <td class='text-center'>
-                                <?php
-                                $tgl1 = strtotime($d['tgl_ukur']);
-                                $tgl2 = strtotime($d['tgl_lahir']);
-
-                                $jarak = $tgl1 - $tgl2;
-
-                                $bulan = $jarak / 60 / 60 / 24 / 31;
-                                ?>
-                                <?= ceil($bulan) ?>
-
-                            </td>
-                            <td>
-                                <?= $d['tinggi_anak'] ?>
-                            </td>
-                            <td>
-                                <?= $d['berat_anak'] ?>
-                            </td>
-
-                            <?php
-                            $x = ceil($bulan);
-                            $y = $d['berat_anak'];
-                            $z = $d['tinggi_anak'];
-                            $c1 = sqrt(pow(($x - $c1x), 2) + pow(($y - $c1y), 2) + pow(($z - $c1z), 2));
-                            $c2 = sqrt(pow(($x - $c2x), 2) + pow(($y - $c2y), 2) + pow(($z - $c2z), 2));
-                            $c3 = sqrt(pow(($x - $c3x), 2) + pow(($y - $c3y), 2) + pow(($z - $c3z), 2));
-
-
-                            if ($c1 < $c2 and $c1 < $c3) {
-                                $ketmin = 'C1';
-                                $jumlah_c1++;
-                                $array_c1x[] = $x;
-                                $array_c1y[] = $y;
-                                $array_c1z[] = $z;
-                            } elseif ($c2 < $c1 and $c2 < $c3) {
-                                $ketmin = 'C2';
-                                $jumlah_c2++;
-                                $array_c2x[] = $x;
-                                $array_c2y[] = $y;
-                                $array_c2z[] = $z;
-                            } else {
-                                $ketmin = 'C3';
-                                $jumlah_c3++;
-                                $array_c3x[] = $x;
-                                $array_c3y[] = $y;
-                                $array_c3z[] = $z;
-                            }
-                            ?>
-
-                            <td>
-                                <?= number_format($c1, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c2, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c3, 2) ?>
-                            </td>
-                            <td>
-                                <?= $ketmin ?>
-                            </td>
-                        <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <canvas id="myChart2"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-<?php
-$i2_c1 = $jumlah_c1;
-$i2_c2 = $jumlah_c2;
-$i2_c3 = $jumlah_c3;
-
-$iterasi++;
-$c1x = array_sum($array_c1x) / $jumlah_c1;
-$c1y = array_sum($array_c1y) / $jumlah_c1;
-$c1z = array_sum($array_c1z) / $jumlah_c1;
-$c2x = array_sum($array_c2x) / $jumlah_c2;
-$c2y = array_sum($array_c2y) / $jumlah_c2;
-$c2z = array_sum($array_c2z) / $jumlah_c2;
-$c3x = array_sum($array_c3x) / $jumlah_c3;
-$c3y = array_sum($array_c3y) / $jumlah_c3;
-$c3z = array_sum($array_c3z) / $jumlah_c3;
-
-$iterasi2 = [
-    'c1x' => $c1x,
-    'c2x' => $c2x,
-    'c3x' => $c3x,
-    'c1y' => $c1y,
-    'c2y' => $c2y,
-    'c3y' => $c3y,
-    'c1z' => $c1z,
-    'c2z' => $c2z,
-    'c3z' => $c3z,
-];
-
-$jumlah_c1 = 0;
-$jumlah_c2 = 0;
-$jumlah_c3 = 0;
-
-$array_c1x = [];
-$array_c1y = [];
-$array_c1z = [];
-$array_c2x = [];
-$array_c2y = [];
-$array_c2z = [];
-$array_c3x = [];
-$array_c3y = [];
-$array_c3z = [];
-
-$nilai = [
-    'c1x' => $c1x,
-    'c2x' => $c2x,
-    'c3x' => $c3x,
-    'c1y' => $c1y,
-    'c2y' => $c2y,
-    'c3y' => $c3y,
-    'c1z' => $c1z,
-    'c2z' => $c2z,
-    'c3z' => $c3z,
-];
-
-session()->set('nilai', $nilai);
-?>
-
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class=" font-weight-bold text-utama">Iterasi ke
-            <?= $iterasi ?>
-        </h6>
-        <p>Pusat Cluster Ke-1 : {
-            <?= number_format($c1x, 2) ?> ,
-            <?= number_format($c1y, 2) ?> }
-            <?= number_format($c1z, 2) ?> }
-        </p>
-        <p>Pusat Cluster Ke-2 : {
-            <?= number_format($c2x, 2) ?> ,
-            <?= number_format($c2y, 2) ?> ,
-            <?= number_format($c2z, 2) ?> }
-        </p>
-        <p>Pusat Cluster Ke-3 : {
-            <?= number_format($c3x, 2) ?> ,
-            <?= number_format($c3y, 2) ?> ,
-            <?= number_format($c3z, 2) ?> }
-        </p>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="display table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead class="text-center">
-                    <tr>
-                        <th>No</th>
-                        <th>Nik</th>
-                        <th>Nama Anak</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Usia (Bulan)</th>
-                        <th>TB</th>
-                        <th>BB</th>
-                        <th>C1 (Normal)</th>
-                        <th>C2 (Kurang)</th>
-                        <th>C3 (Lebih)</th>
-                        <th>C</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <?php $no = 1;
-                    foreach ($data as $d) : ?>
-                        <tr>
-                            <td>
-                                <?= $no++ ?>
-                            </td>
-                            <td>
-                                <?= $d['nik'] ?>
-                            </td>
-                            <td>
-                                <?= $d['nama_anak'] ?>
-                            </td>
-                            <td>
-                                <?php
-                                $originalDate = ($d['tgl_lahir']);
-                                $newDate = date("d-m-Y", strtotime($originalDate));
-                                echo $newDate;
-                                ?>
-                            </td>
-                            <td class='text-center'>
-                                <?php
-                                $tgl1 = strtotime($d['tgl_ukur']);
-                                $tgl2 = strtotime($d['tgl_lahir']);
-
-                                $jarak = $tgl1 - $tgl2;
-
-                                $bulan = $jarak / 60 / 60 / 24 / 31;
-                                ?>
-                                <?= ceil($bulan) ?>
-
-                            </td>
-                            <td>
-                                <?= $d['tinggi_anak'] ?>
-                            </td>
-                            <td>
-                                <?= $d['berat_anak'] ?>
-                            </td>
-
-                            <?php
-                            $x = ceil($bulan);
-                            $y = $d['berat_anak'];
-                            $z = $d['tinggi_anak'];
-                            $c1 = sqrt(pow(($x - $c1x), 2) + pow(($y - $c1y), 2) + pow(($z - $c1z), 2));
-                            $c2 = sqrt(pow(($x - $c2x), 2) + pow(($y - $c2y), 2) + pow(($z - $c2z), 2));
-                            $c3 = sqrt(pow(($x - $c3x), 2) + pow(($y - $c3y), 2) + pow(($z - $c3z), 2));
-
-
-                            if ($c1 < $c2 and $c1 < $c3) {
-                                $ketmin = 'C1';
-                                $jumlah_c1++;
-                                $array_c1x[] = $x;
-                                $array_c1y[] = $y;
-                                $array_c1z[] = $z;
-                                $long_c1[] = $d['long'];
-                                $lat_c1[] = $d['lat'];
-                            } elseif ($c2 < $c1 and $c2 < $c3) {
-                                $ketmin = 'C2';
-                                $jumlah_c2++;
-                                $array_c2x[] = $x;
-                                $array_c2y[] = $y;
-                                $array_c2z[] = $z;
-                                $long_c2[] = $d['long'];
-                                $lat_c2[] = $d['lat'];
-                            } else {
-                                $ketmin = 'C3';
-                                $jumlah_c3++;
-                                $array_c3x[] = $x;
-                                $array_c3y[] = $y;
-                                $array_c3z[] = $z;
-                                $long_c3[] = $d['long'];
-                                $lat_c3[] = $d['lat'];
-                            }
-                            ?>
-
-                            <td>
-                                <?= number_format($c1, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c2, 2) ?>
-                            </td>
-                            <td>
-                                <?= number_format($c3, 2) ?>
-                            </td>
-                            <td>
-                                <?= $ketmin ?>
-                            </td>
-                        <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <canvas id="myChart3"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-<?php
-$i3_c1 = $jumlah_c1;
-$i3_c2 = $jumlah_c2;
-$i3_c3 = $jumlah_c3;
-
-session()->set('lat_c1', $lat_c1);
-session()->set('long_c1', $long_c1);
-session()->set('lat_c2', $lat_c2);
-session()->set('long_c2', $long_c2);
-session()->set('lat_c3', $lat_c3);
-session()->set('long_c3', $long_c3);
-
-
+    $iterasi++;
+}
 ?>
 
 <?= $this->endSection(); ?>
@@ -581,118 +331,40 @@ session()->set('long_c3', $long_c3);
 
 <script>
     // Data yang akan ditampilkan di grafik
-    var data = {
-        labels: ['Normal', 'Kurang', 'Lebih'],
-        datasets: [{
-            label: 'Data Balita',
-            data: [<?= $i1_c1; ?>, <?= $i1_c2; ?>, <?= $i1_c3; ?>],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-            ],
-            borderColor: [
-                'rgb(75, 192, 192)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-            ],
-            borderWidth: 1
-        }]
-    };
+    <?php for ($i = 1; $i <= count($pembagian_cluster_seluruh_iterasi); $i++): ?>
+        var data<?= $i ?> = {
+            labels: ['Cluster 1', 'Cluster 2', 'Cluster 3'],
+            datasets: [{
+                data: [<?= $pembagian_cluster_seluruh_iterasi[$i-1]['c1']; ?>, <?= $pembagian_cluster_seluruh_iterasi[$i-1]['c2']; ?>, <?= $pembagian_cluster_seluruh_iterasi[$i-1]['c3']; ?>],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                ],
+                borderWidth: 1
+            }]
+        };
 
-    // Opsi konfigurasi grafik
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
+        var options<?= $i ?> = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        }
-    };
+        };
 
-    // Membuat grafik batang dengan menggunakan Chart.js
-    var ctx = document.getElementById('myChart1').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: options
-    });
-</script>
+        var ctx<?= $i ?> = document.getElementById('myChart<?= $i ?>').getContext('2d');
+        var myChart<?= $i ?> = new Chart(ctx<?= $i ?>, {
+            type: 'bar',
+            data: data<?= $i ?>,
+            options: options<?= $i ?>
+        });
+    <?php endfor; ?>
 
-<script>
-    // Data yang akan ditampilkan di grafik
-    var data = {
-        labels: ['Normal', 'Kurang', 'Lebih'],
-        datasets: [{
-            label: 'Data Balita',
-            data: [<?= $i2_c1; ?>, <?= $i2_c2; ?>, <?= $i2_c3; ?>],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-            ],
-            borderColor: [
-                'rgb(75, 192, 192)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-            ],
-            borderWidth: 1
-        }]
-    };
-
-    // Opsi konfigurasi grafik
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
-
-    // Membuat grafik batang dengan menggunakan Chart.js
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: options
-    });
-</script>
-
-<script>
-    // Data yang akan ditampilkan di grafik
-    var data = {
-        labels: ['Normal', 'Kurang', 'Lebih'],
-        datasets: [{
-            label: 'Data Balita',
-            data: [<?= $i3_c1; ?>, <?= $i3_c2; ?>, <?= $i3_c3; ?>],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-            ],
-            borderColor: [
-                'rgb(75, 192, 192)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-            ],
-            borderWidth: 1
-        }]
-    };
-
-    // Opsi konfigurasi grafik
-    var options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
-
-    // Membuat grafik batang dengan menggunakan Chart.js
-    var ctx = document.getElementById('myChart3').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: options
-    });
 </script>
 <?= $this->endSection(); ?>

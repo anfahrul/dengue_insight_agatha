@@ -10,6 +10,7 @@ use App\Models\m_Progres;
 use App\Models\m_DataDBD;
 use App\Models\m_Kelurahan;
 use App\Models\m_Tahun;
+use App\Models\m_ClusterDBD;
 
 
 class DashboardController extends BaseController
@@ -21,6 +22,7 @@ class DashboardController extends BaseController
     protected $m_DataDBD;
     protected $m_Kelurahan;
     protected $m_Tahun;
+    protected $m_ClusterDBD;
 
     public function __construct()
     {
@@ -31,6 +33,7 @@ class DashboardController extends BaseController
         $this->m_DataDBD = new m_DataDBD();
         $this->m_Kelurahan = new m_Kelurahan();
         $this->m_Tahun = new m_Tahun();
+        $this->m_ClusterDBD = new m_ClusterDBD();
     }
     public function index()
     {
@@ -260,43 +263,76 @@ class DashboardController extends BaseController
         return redirect()->to(base_url('dashboard/data_balita'));
     }
 
+
+    // clustering dan identifikasi
     public function cluster()
     {
-        $c1x = $this->request->getPost('c1x');
-        $c2x = $this->request->getPost('c2x');
-        $c3x = $this->request->getPost('c3x');
-        $c1y = $this->request->getPost('c1y');
-        $c2y = $this->request->getPost('c2y');
-        $c3y = $this->request->getPost('c3y');
-        $c1z = $this->request->getPost('c1z');
-        $c2z = $this->request->getPost('c2z');
-        $c3z = $this->request->getPost('c3z');
-
-        $id = $this->request->getPost('id_cluster');
-
-        $update = [
-            'c1x' => $c1x,
-            'c2x' => $c2x,
-            'c3x' => $c3x,
-            'c1y' => $c1y,
-            'c2y' => $c2y,
-            'c3y' => $c3y,
-            'c1z' => $c1z,
-            'c2z' => $c2z,
-            'c3z' => $c3z,
+        $data = [
+            'title' => 'Cluster',
         ];
 
-        $this->m_Cluster->update($id, $update);
-        return redirect()->to(base_url('dashboard/identifikasi'));
+        return view('dashboard_user/cluster', $data);
+    }
+
+    public function cluster_add()
+    {
+        $c1a = $this->request->getPost('c1a');
+        $c1b = $this->request->getPost('c1b');
+        $c1c = $this->request->getPost('c1c');
+        $c1d = $this->request->getPost('c1d');
+        $c1e = $this->request->getPost('c1e');
+        $c1f = $this->request->getPost('c1f');
+        $c2a = $this->request->getPost('c2a');
+        $c2b = $this->request->getPost('c2b');
+        $c2c = $this->request->getPost('c2c');
+        $c2d = $this->request->getPost('c2d');
+        $c2e = $this->request->getPost('c2e');
+        $c2f = $this->request->getPost('c2f');
+        $c3a = $this->request->getPost('c3a');
+        $c3b = $this->request->getPost('c3b');
+        $c3c = $this->request->getPost('c3c');
+        $c3d = $this->request->getPost('c3d');
+        $c3e = $this->request->getPost('c3e');
+        $c3f = $this->request->getPost('c3f');
+
+        $data = [
+            'c1a' => $c1a,
+            'c1b' => $c1b,
+            'c1c' => $c1c,
+            'c1d' => $c1d,
+            'c1e' => $c1e,
+            'c1f' => $c1f,
+            'c2a' => $c2a,
+            'c2b' => $c2b,
+            'c2c' => $c2c,
+            'c2d' => $c2d,
+            'c2e' => $c2e,
+            'c2f' => $c2f,
+            'c3a' => $c3a,
+            'c3b' => $c3b,
+            'c3c' => $c3c,
+            'c3d' => $c3d,
+            'c3e' => $c3e,
+            'c3f' => $c3f,
+        ];
+
+        $this->m_ClusterDBD->insert($data);
+        return redirect()->to(base_url('dashboard/cluster'));
     }
 
     public function identifikasi_user()
     {
+        $lastClusterInserted = $this->m_ClusterDBD->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+            
         $data = [
             'title' => 'Identifikasi',
             'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Data->findAll(),
-            'cluster' => $this->m_Cluster->first(),
+            'data' => $this->m_DataDBD->where('id_tahun', 4)->findAll(),
+            'cluster' => $lastClusterInserted,
+            'modelKelurahan' => $this->m_Kelurahan,
         ];
 
         return view('dashboard_user/identifikasi_user', $data);

@@ -54,7 +54,8 @@ $routes->group('', ['filter' => 'authFilter'], function ($routes) {
     $routes->post('/dashboard/edit_data/proses', 'DashboardController::proses_edit_data');
     $routes->get('/dashboard/hapus_data/(:num)', 'DashboardController::hapus_data/$1');
 
-    $routes->post('/dashboard/cluster', 'DashboardController::cluster');
+    $routes->get('/dashboard/cluster', 'DashboardController::cluster');
+    $routes->post('/dashboard/cluster/add_cluster', 'DashboardController::cluster_add');
     $routes->get('/dashboard/identifikasi', 'DashboardController::identifikasi_user');
     $routes->get('/dashboard/klasifikasi', 'DashboardController::klasifikasi_user');
     $routes->get('/dashboard/peta/sebaran', 'DashboardController::peta_sebaran_user');
