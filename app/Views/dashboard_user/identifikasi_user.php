@@ -55,6 +55,14 @@ $array_c3 = [];
 
 $pembagian_cluster_seluruh_iterasi = [];
 
+$final_result = [];
+
+$final_cluster = [
+    'c0' => [],
+    'c1' => [],
+    'c2' => [],
+];
+
 while (true) { ?>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -146,6 +154,7 @@ while (true) { ?>
                                             'f' => $f,
                                         ];
                                         array_push($array_c1, $newData);
+                                        $final_cluster['c0'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
                                     } elseif ($c2 < $c1 and $c2 < $c3) {
                                         $ketmin = 'C2';
                                         $jumlah_c2++;
@@ -159,6 +168,7 @@ while (true) { ?>
                                             'f' => $f
                                         ];
                                         array_push($array_c2, $newData);
+                                        $final_cluster['c1'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
                                     } else {
                                         $ketmin = 'C3';
                                         $jumlah_c3++;
@@ -172,6 +182,7 @@ while (true) { ?>
                                             'f' => $f
                                         ];
                                         array_push($array_c3, $newData);
+                                        $final_cluster['c2'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
                                     }
                                 ?>
 
@@ -310,7 +321,17 @@ while (true) { ?>
         }
     }
     if ($centroidAreEqual) {
+        array_push($final_result, $array_c1);
+        array_push($final_result, $array_c2);
+        array_push($final_result, $array_c3);
+
         break;
+    } else {
+        $final_cluster = [
+            'c0' => [],
+            'c1' => [],
+            'c2' => [],
+        ];
     }
 
     $jumlah_c1 = 0;
@@ -323,7 +344,62 @@ while (true) { ?>
 
     $iterasi++;
 }
+
+// dd($final_cluster);
+
 ?>
+
+<h1 class="h3 mb-3 mt-5 text-gray-800">Hasil Identifikasi</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="font-weight-bold text-utama">Pembagian Cluster Kelurahan</h6>
+    </div>
+    <div class="card-body">
+        <?php
+        $cluster_key = 'c';
+        $cluster_strings = [];
+
+        for ($c = 0; $c < count($final_cluster); $c++) {
+            $current_cluster_key = $cluster_key . $c;
+            $cluster_data = $final_cluster[$current_cluster_key];
+
+            $cluster_strings[$c] = "";
+
+            foreach ($cluster_data as $res) :
+                $cluster_strings[$c] .= "$res, ";
+            endforeach;
+        }
+
+        foreach ($cluster_strings as $key => $cluster_string):
+            echo "<p><b>Cluster $key:</b><br> " . rtrim($cluster_string, ', ') . "</p>";
+        endforeach;
+        ?>
+        
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="font-weight-bold text-utama">Ringkasan</h6>
+        <p>Nilai Rata-Rata Setiap Indikator pada Masing-Masing Cluster</p>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <canvas id="chartResult1"></canvas>
+            </div>
+            <div class="col-6 mx-auto">
+                <canvas id="chartResult2"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <canvas id="chartResult3"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?= $this->endSection(); ?>
 
@@ -367,4 +443,70 @@ while (true) { ?>
     <?php endfor; ?>
 
 </script>
+
+<script>
+    // Data yang akan ditampilkan di grafik
+    <?php for ($c = 0; $c < count($final_result); $c++): ?>
+        var data<?= $c+1 ?> = {
+            labels: ['Total Kasus', 'Remaja', 'Wanita', 'Pria', 'Balita', 'Orang Dewasa'],
+            datasets: [{
+                <?php
+                $c_a = 0;
+                $c_b = 0;
+                $c_c = 0;
+                $c_d = 0;
+                $c_e = 0;
+                $c_f = 0;
+
+                foreach ($final_result[$c] as $res) :
+                    $c_a = $c_a + $res['a'];
+                    $c_b = $c_b + $res['b'];
+                    $c_c = $c_c + $res['c'];
+                    $c_d = $c_d + $res['d'];
+                    $c_e = $c_e + $res['e'];
+                    $c_f = $c_f + $res['f'];
+                endforeach;
+                ?>
+
+                label: 'Cluster ' + <?= $c ?>,
+                data: [
+                    <?= $c_a/count($final_result[$c]); ?>,
+                    <?= $c_b/count($final_result[$c]); ?>,
+                    <?= $c_c/count($final_result[$c]); ?>,
+                    <?= $c_d/count($final_result[$c]); ?>,
+                    <?= $c_e/count($final_result[$c]); ?>,
+                    <?= $c_f/count($final_result[$c]); ?>,
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var options<?= $c+1 ?> = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        var ctx<?= $c+1 ?> = document.getElementById('chartResult<?= $c+1 ?>').getContext('2d');
+        var chartResult<?= $c+1 ?> = new Chart(ctx<?= $c+1 ?>, {
+            type: 'bar',
+            data: data<?= $c+1 ?>,
+            options: options<?= $c+1 ?>
+        });
+    <?php endfor; ?>
+
+</script>
+
 <?= $this->endSection(); ?>
