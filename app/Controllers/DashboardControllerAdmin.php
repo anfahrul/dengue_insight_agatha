@@ -11,6 +11,8 @@ use App\Models\m_Puskesmas;
 use App\Models\m_Kelurahan;
 use App\Models\m_Tahun;
 use App\Models\m_DataDBD;
+use App\Models\m_GeoLocationFile;
+use CodeIgniter\Files\File;
 
 class DashboardControllerAdmin extends BaseController
 {
@@ -23,6 +25,8 @@ class DashboardControllerAdmin extends BaseController
     protected $m_Kelurahan;
     protected $m_Tahun;
     protected $m_DataDBD;
+    protected $m_GeoLocationFile;
+    protected $helpers = ['form'];
 
     public function __construct()
     {
@@ -35,6 +39,7 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Kelurahan = new m_Kelurahan();
         $this->m_Tahun = new m_Tahun();
         $this->m_DataDBD = new m_DataDBD();
+        $this->m_GeoLocationFile = new m_GeoLocationFile();
     }
 
 
@@ -435,6 +440,59 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Kelurahan->delete($id);
         session()->setFlashdata('success', 'Berhasil menghapus data');
         return redirect()->to(base_url('admin/data/kelurahan'));
+    }
+
+
+    // data batas wilayah
+    public function data_batas_wilayah()
+    {
+        return view('dashboard_admin/data_batas_wilayah', [
+            'title' => 'Data Batas Wilayah',
+            'errors' => []
+        ]);
+    }
+    
+    public function upload_data_batas_wilayah()
+    {
+        $validationRule = [
+            'userfile' => [
+                'label' => 'Geojson File',
+                'rules' => [
+                    'uploaded[userfile]',
+                ],
+            ],
+        ];
+        if (! $this->validateData([], $validationRule)) {
+            $data = ['errors' => $this->validator->getErrors()];
+
+            return view('dashboard_admin/data_batas_wilayah', $data);
+        }
+
+        
+        $geo = $this->request->getFile('userfile');
+        $random_name = $geo->getRandomName();
+        
+        if (! $geo->hasMoved()) {
+            $geo->move('geo', $random_name);
+            $file_name = $geo->getName();
+
+            $data = [
+                'title' => 'Your Title Here',
+            ];
+
+            $data_save = [
+                'file_name' => $file_name,
+            ];
+
+            $this->m_GeoLocationFile->insert($data_save);
+            session()->setFlashdata('success', 'Berhasil menambah data');
+
+            return view('dashboard_admin/upload_success', $data);
+        }
+
+        $data = ['errors' => 'The file has already been moved.'];
+
+        return view('dashboard_admin/data_batas_wilayah', $data);
     }
 
 

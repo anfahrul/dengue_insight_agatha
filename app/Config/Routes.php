@@ -95,6 +95,9 @@ $routes->group('admin', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('dashboard/edit_data/kelurahan/(:num)', 'DashboardControllerAdmin::edit_data_kelurahan/$1');
     $routes->post('dashboard/edit_data/kelurahan/proses', 'DashboardControllerAdmin::proses_edit_data_kelurahan');
     $routes->get('dashboard/delete/kelurahan/(:num)', 'DashboardControllerAdmin::delete_kelurahan/$1');
+
+    $routes->get('data/batas_wilayah', 'DashboardControllerAdmin::data_batas_wilayah');
+    $routes->post('data/batas_wilayah/upload', 'DashboardControllerAdmin::upload_data_batas_wilayah');
     
     $routes->get('data/tahun', 'DashboardControllerAdmin::data_tahun');
     $routes->post('dashboard/add_tahun/proses', 'DashboardControllerAdmin::proses_add_tahun');

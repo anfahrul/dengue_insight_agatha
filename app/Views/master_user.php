@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>
-        <?= $title ?> - Puskesmas Hoga
+        <?= $title ?>
     </title>
 
     <!-- Custom fonts for this template-->
@@ -28,6 +28,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.awesome-markers/dist/leaflet.awesome-markers.css" />
 
+
+    <?= $this->renderSection('style') ?>
+    
     <style>
         #map {
             height: 500px;
@@ -48,9 +51,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                    <img src="<?= base_url('img/logo_kesmas.png') ?>" class="rounded mx-auto d-block" style="width:60px" alt="...">
+                    <img src="<?= base_url('img/kementerian-kesehatan-ri.svg') ?>" class="rounded mx-auto d-block" style="width:60px" alt="...">
                 </div>
-                <div class="sidebar-brand-text mx-3">Puskesmas Hoga</div>
+                <div class="sidebar-brand-text mx-3">Dengue Insight</div>
             </a>
 
             <!-- Divider -->

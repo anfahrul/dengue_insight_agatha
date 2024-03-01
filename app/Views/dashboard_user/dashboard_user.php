@@ -18,10 +18,10 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <a class="nav-link" href="<?= base_url('dashboard/data_balita'); ?>">
+                            <a class="nav-link" href="<?= base_url('dashboard/data_dbd'); ?>">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Tambah Data</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Balita</div>
+                                    Data DBD</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Kota Kendari</div>
                             </a>
                         </div>
                         <div class="col-auto">
@@ -40,37 +40,15 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-1">
-                            <a class="nav-link" href="<?= base_url('dashboard/data_balita'); ?>">
+                            <a class="nav-link" href="<?= base_url('dashboard/identifikasi'); ?>">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Identifikasi</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Balita</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Sebaran DBD</div>
                             </a>
                         </div>
                         <div class="col-auto">
                             <a class="nav-link" href="<?= base_url('/dashboard/identifikasi'); ?>">
                                 <i class="fa-solid fa-layer-group fa-2x text-gray-300"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <a class="nav-link" href="<?= base_url('/dashboard/klasifikasi'); ?>">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                    Klasifikasi</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Balita</div>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a class="nav-link" href="<?= base_url('/dashboard/klasifikasi'); ?>">
-                                <i class="fa-solid fa-rectangle-list fa-2x text-gray-300"></i>
                             </a>
                         </div>
                     </div>
@@ -86,8 +64,8 @@
                         <div class="col mr-2">
                             <a class="nav-link" href="<?= base_url('/dashboard/peta/sebaran'); ?>">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Peta Sebaran</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Balita</div>
+                                    Peta GIS</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Sebaran DBD</div>
                             </a>
                         </div>
                         <div class="col-auto">

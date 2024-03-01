@@ -49,7 +49,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                    <img src="<?= base_url('img/logo_kesmas.png') ?>" class="rounded mx-auto d-block" style="width:60px" alt="...">
+                    <img src="<?= base_url('img/kementerian-kesehatan-ri.svg') ?>" class="rounded mx-auto d-block" style="width:60px" alt="...">
                 </div>
                 <div class="sidebar-brand-text mx-3">Dengue Insight</div>
             </a>
@@ -106,6 +106,13 @@
                 <a class="nav-link" href="<?= base_url('admin/data/kelurahan'); ?>">
                     <i class="fa-solid fa-square-plus"></i>
                     <span>Data Kelurahan</span></a>
+            </li>
+            
+            <!-- Nav Item - Data Pengguna -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/data/batas_wilayah'); ?>">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span>Upload Batas Wilayah</span></a>
             </li>
             
             <!-- Nav Item - Data Pengguna -->

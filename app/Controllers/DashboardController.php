@@ -366,7 +366,7 @@ class DashboardController extends BaseController
             'long_c3' => $long_c3,
 
         ];
-        return view('dashboard_user/peta_sebaran_user', $data);
+        return view('dashboard_user/gis', $data);
     }
 
     public function view_file1()
