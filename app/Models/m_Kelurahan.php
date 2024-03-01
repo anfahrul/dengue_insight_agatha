@@ -17,4 +17,18 @@ class m_Kelurahan extends Model
 
         return $kelurahan ? $kelurahan['nama_kelurahan'] : '';
     }
+    
+    public function getLatById($id_kelurahan)
+    {
+        $kelurahan = $this->find($id_kelurahan);
+
+        return $kelurahan ? $kelurahan['lat'] : '';
+    }
+    
+    public function getLonById($id_kelurahan)
+    {
+        $kelurahan = $this->find($id_kelurahan);
+
+        return $kelurahan ? $kelurahan['lon'] : '';
+    }
 }

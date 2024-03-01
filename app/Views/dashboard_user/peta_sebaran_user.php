@@ -30,10 +30,11 @@
     $long_c2 = $long_c2;
     $lat_c3 = $lat_c3;
     $long_c3 = $long_c3;
-
+    
     $kordinatc1 = array_combine($lat_c1, $long_c1);
     $kordinatc2 = array_combine($lat_c2, $long_c2);
     $kordinatc3 = array_combine($lat_c3, $long_c3);
+    // dd($kordinatc2);
 
     ?>
 
@@ -53,8 +54,8 @@
         });
 
         const map = L.map('map', {
-            center: [-5.489488620660947, 123.74777327972306],
-            zoom: 10,
+            center: [-3.9944050776897497, 122.52349485683202],
+            zoom: 12,
             layers: [osm, cities]
         });
 

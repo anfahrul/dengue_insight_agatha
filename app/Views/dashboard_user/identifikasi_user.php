@@ -53,14 +53,21 @@ $array_c1 = [];
 $array_c2 = [];
 $array_c3 = [];
 
+$lat_c1 = [];
+$lat_c2 = [];
+$lat_c3 = [];
+$lon_c1 = [];
+$lon_c2 = [];
+$lon_c3 = [];
+
 $pembagian_cluster_seluruh_iterasi = [];
 
 $final_result = [];
 
 $final_cluster = [
-    'c0' => [],
     'c1' => [],
     'c2' => [],
+    'c3' => [],
 ];
 
 while (true) { ?>
@@ -154,7 +161,9 @@ while (true) { ?>
                                             'f' => $f,
                                         ];
                                         array_push($array_c1, $newData);
-                                        $final_cluster['c0'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        $final_cluster['c1'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        array_push($lat_c1, $modelKelurahan->getLatById($dat['id_kelurahan']));
+                                        array_push($lon_c1, $modelKelurahan->getLonById($dat['id_kelurahan']));
                                     } elseif ($c2 < $c1 and $c2 < $c3) {
                                         $ketmin = 'C2';
                                         $jumlah_c2++;
@@ -168,7 +177,9 @@ while (true) { ?>
                                             'f' => $f
                                         ];
                                         array_push($array_c2, $newData);
-                                        $final_cluster['c1'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        $final_cluster['c2'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        array_push($lat_c2, $modelKelurahan->getLatById($dat['id_kelurahan']));
+                                        array_push($lon_c2, $modelKelurahan->getLonById($dat['id_kelurahan']));
                                     } else {
                                         $ketmin = 'C3';
                                         $jumlah_c3++;
@@ -182,7 +193,9 @@ while (true) { ?>
                                             'f' => $f
                                         ];
                                         array_push($array_c3, $newData);
-                                        $final_cluster['c2'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        $final_cluster['c3'][] = $modelKelurahan->getNamaKelurahanById($dat['id_kelurahan']);
+                                        array_push($lat_c3, $modelKelurahan->getLatById($dat['id_kelurahan']));
+                                        array_push($lon_c3, $modelKelurahan->getLonById($dat['id_kelurahan']));
                                     }
                                 ?>
 
@@ -328,10 +341,17 @@ while (true) { ?>
         break;
     } else {
         $final_cluster = [
-            'c0' => [],
             'c1' => [],
             'c2' => [],
+            'c3' => [],
         ];
+
+        $lat_c1 = [];
+        $lat_c2 = [];
+        $lat_c3 = [];
+        $lon_c1 = [];
+        $lon_c2 = [];
+        $lon_c3 = [];
     }
 
     $jumlah_c1 = 0;
@@ -344,8 +364,6 @@ while (true) { ?>
 
     $iterasi++;
 }
-
-// dd($final_cluster);
 
 ?>
 
@@ -360,7 +378,7 @@ while (true) { ?>
         $cluster_key = 'c';
         $cluster_strings = [];
 
-        for ($c = 0; $c < count($final_cluster); $c++) {
+        for ($c = 1; $c <= count($final_cluster); $c++) {
             $current_cluster_key = $cluster_key . $c;
             $cluster_data = $final_cluster[$current_cluster_key];
 
@@ -372,7 +390,7 @@ while (true) { ?>
         }
 
         foreach ($cluster_strings as $key => $cluster_string):
-            echo "<p><b>Cluster $key:</b><br> " . rtrim($cluster_string, ', ') . "</p>";
+            echo "<p><b>Cluster $key :</b><br> " . rtrim($cluster_string, ', ') . "</p>";
         endforeach;
         ?>
         
@@ -400,6 +418,15 @@ while (true) { ?>
         </div>
     </div>
 </div>
+
+<?php
+session()->set('lat_c1', $lat_c1);
+session()->set('long_c1', $lon_c1);
+session()->set('lat_c2', $lat_c2);
+session()->set('long_c2', $lon_c2);
+session()->set('lat_c3', $lat_c3);
+session()->set('long_c3', $lon_c3);
+?>
 
 <?= $this->endSection(); ?>
 
@@ -468,7 +495,7 @@ while (true) { ?>
                 endforeach;
                 ?>
 
-                label: 'Cluster ' + <?= $c ?>,
+                label: 'Cluster ' + <?= $c+1 ?>,
                 data: [
                     <?= $c_a/count($final_result[$c]); ?>,
                     <?= $c_b/count($final_result[$c]); ?>,
