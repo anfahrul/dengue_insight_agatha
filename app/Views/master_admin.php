@@ -30,6 +30,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <?= $this->renderSection('style') ?>
+    
     <style>
         #map {
             height: 500px;
@@ -132,22 +134,9 @@
 
             <!-- Nav Item - Peta Sebaran -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/peta/balita'); ?>">
+                <a class="nav-link" href="<?= base_url('admin/peta/dbd'); ?>">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Peta Sebaran</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>View File</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Database Posyandu :</h6>
-                        <a class="collapse-item" href="<?= base_url('admin/dashboard/view/file'); ?>">Arsipan balita</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Divider -->

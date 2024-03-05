@@ -13,6 +13,9 @@ use App\Models\m_Tahun;
 use App\Models\m_DataDBD;
 use App\Models\m_GeoLocationFile;
 use CodeIgniter\Files\File;
+use App\Models\m_ClusterDBD;
+use App\Models\m_IdentificationHistory;
+use App\Models\m_IdentificationHistoryCluster;
 
 class DashboardControllerAdmin extends BaseController
 {
@@ -27,6 +30,9 @@ class DashboardControllerAdmin extends BaseController
     protected $m_DataDBD;
     protected $m_GeoLocationFile;
     protected $helpers = ['form'];
+    protected $m_ClusterDBD;
+    protected $m_IdentificationHistory;
+    protected $m_IdentificationHistoryCluster;
 
     public function __construct()
     {
@@ -40,6 +46,9 @@ class DashboardControllerAdmin extends BaseController
         $this->m_Tahun = new m_Tahun();
         $this->m_DataDBD = new m_DataDBD();
         $this->m_GeoLocationFile = new m_GeoLocationFile();
+        $this->m_ClusterDBD = new m_ClusterDBD();
+        $this->m_IdentificationHistory = new m_IdentificationHistory();
+        $this->m_IdentificationHistoryCluster = new m_IdentificationHistoryCluster();
     }
 
 
@@ -568,22 +577,45 @@ class DashboardControllerAdmin extends BaseController
 
     public function hasil_cluster()
     {
+        $lastClusterInserted = $this->m_ClusterDBD->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+            
         $data = [
             'title' => 'Identifikasi',
             'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Data->findAll(),
-            'cluster' => $this->m_Cluster->first(),
+            'data' => $this->m_DataDBD->where('id_tahun', 4)->findAll(),
+            'cluster' => $lastClusterInserted,
+            'modelKelurahan' => $this->m_Kelurahan,
         ];
 
-        return view('dashboard_admin/hasil_cluster', $data);
+        // return view('dashboard_user/identifikasi_user', $data);
+        return view('dashboard_admin/hasil_identifikasi', $data);
     }
 
-    public function peta_balita()
+    public function peta_sebaran()
     {
+        $lastInsertedGeoLocationFile = $this->m_GeoLocationFile->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+        
+        $lastInsertedIdentificationHistory = $this->m_IdentificationHistory->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+
+        $lastIdentificationHistory = $this->m_IdentificationHistoryCluster->getByIdIdentificationHistory($lastInsertedIdentificationHistory->id_identification_history);
+
         $data = [
-            'title' => 'peta balita'
+            'title' => 'peta sebaran',
+            'lastInsertedGeoLocationFile' => $lastInsertedGeoLocationFile->file_name,
+            'lastIdentificationHistory' => $lastIdentificationHistory,
+            'modelKelurahan' => $this->m_Kelurahan,
         ];
-        return view('dashboard_admin/peta_sebaran_balita', $data);
+
+        return view('dashboard_admin/gis_admin', $data);
     }
 
     public function view_file_admin()

@@ -107,7 +107,7 @@ $routes->group('admin', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('dashboard/delete/tahun/(:num)', 'DashboardControllerAdmin::delete_tahun/$1');
 
     $routes->get('dashboard/hasil/cluster', 'DashboardControllerAdmin::hasil_cluster');
-    $routes->get('peta/balita', 'DashboardControllerAdmin::peta_balita');
+    $routes->get('peta/dbd', 'DashboardControllerAdmin::peta_sebaran');
     $routes->get('dashboard/view/file', 'DashboardControllerAdmin::view_file_admin');
 });
 
