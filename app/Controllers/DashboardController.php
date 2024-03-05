@@ -11,6 +11,9 @@ use App\Models\m_DataDBD;
 use App\Models\m_Kelurahan;
 use App\Models\m_Tahun;
 use App\Models\m_ClusterDBD;
+use App\Models\m_GeoLocationFile;
+use App\Models\m_IdentificationHistory;
+use App\Models\m_IdentificationHistoryCluster;
 
 
 class DashboardController extends BaseController
@@ -23,6 +26,9 @@ class DashboardController extends BaseController
     protected $m_Kelurahan;
     protected $m_Tahun;
     protected $m_ClusterDBD;
+    protected $m_GeoLocationFile;
+    protected $m_IdentificationHistory;
+    protected $m_IdentificationHistoryCluster;
 
     public function __construct()
     {
@@ -34,6 +40,9 @@ class DashboardController extends BaseController
         $this->m_Kelurahan = new m_Kelurahan();
         $this->m_Tahun = new m_Tahun();
         $this->m_ClusterDBD = new m_ClusterDBD();
+        $this->m_GeoLocationFile = new m_GeoLocationFile();
+        $this->m_IdentificationHistory = new m_IdentificationHistory();
+        $this->m_IdentificationHistoryCluster = new m_IdentificationHistoryCluster();
     }
     public function index()
     {
@@ -338,6 +347,35 @@ class DashboardController extends BaseController
         return view('dashboard_user/identifikasi_user', $data);
     }
 
+    public function identifikasi_add()
+    {
+        $data = [
+            'date' => date('Y-m-d'),
+        ];
+        $this->m_IdentificationHistory->insert($data);
+        $insertedIDOfTheIdentificationHistory = $this->m_IdentificationHistory->insertID();
+
+        $finalCluster = json_decode($this->request->getPost('finalCluster'), true);
+        foreach ($finalCluster as $clusterKey => $desaArray) {
+            $cluster = intval(substr($clusterKey, -1));
+
+            foreach ($desaArray as $namaDesa) {
+                $id_kelurahan = $this->m_Kelurahan->getIdByNamaKelurahan($namaDesa);
+
+                $dataIdentificationHistoryCluster = [
+                    'id_identification_history' => $insertedIDOfTheIdentificationHistory,
+                    'id_kelurahan' => $id_kelurahan,
+                    'cluster' => $cluster,
+                ];
+        
+                $this->m_IdentificationHistoryCluster->save($dataIdentificationHistoryCluster);
+            }
+        }        
+
+        return redirect()->to(base_url('dashboard/peta/sebaran'));
+    }
+
+
     public function klasifikasi_user()
     {
         $data = [
@@ -348,24 +386,25 @@ class DashboardController extends BaseController
 
     public function peta_sebaran_user()
     {
-        $lat_c1 = session()->get('lat_c1');
-        $long_c1 = session()->get('long_c1');
-        $lat_c2 = session()->get('lat_c2');
-        $long_c2 = session()->get('long_c2');
-        $lat_c3 = session()->get('lat_c3');
-        $long_c3 = session()->get('long_c3');
+        $lastInsertedGeoLocationFile = $this->m_GeoLocationFile->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+        
+        $lastInsertedIdentificationHistory = $this->m_IdentificationHistory->getOrderById()
+            ->limit(1)
+            ->get()
+            ->getRow();
+
+        $lastIdentificationHistory = $this->m_IdentificationHistoryCluster->getByIdIdentificationHistory($lastInsertedIdentificationHistory->id_identification_history);
 
         $data = [
             'title' => 'peta sebaran',
-            'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'lat_c1' => $lat_c1,
-            'long_c1' => $long_c1,
-            'lat_c2' => $lat_c2,
-            'long_c2' => $long_c2,
-            'lat_c3' => $lat_c3,
-            'long_c3' => $long_c3,
-
+            'lastInsertedGeoLocationFile' => $lastInsertedGeoLocationFile->file_name,
+            'lastIdentificationHistory' => $lastIdentificationHistory,
+            'modelKelurahan' => $this->m_Kelurahan,
         ];
+
         return view('dashboard_user/gis', $data);
     }
 

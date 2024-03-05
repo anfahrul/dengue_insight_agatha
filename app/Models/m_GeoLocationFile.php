@@ -10,4 +10,9 @@ class m_GeoLocationFile extends Model
     protected $primaryKey = 'id_geo_location_file';
     protected $returnType = 'array';
     protected $allowedFields = ['file_name'];
+
+    public function getOrderById()
+    {
+        return $this->orderBy('id_geo_location_file', 'DESC');
+    }
 }

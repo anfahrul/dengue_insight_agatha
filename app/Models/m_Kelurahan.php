@@ -18,6 +18,20 @@ class m_Kelurahan extends Model
         return $kelurahan ? $kelurahan['nama_kelurahan'] : '';
     }
     
+    public function getObjectIdById($id_kelurahan)
+    {
+        $kelurahan = $this->find($id_kelurahan);
+
+        return $kelurahan ? $kelurahan['object_id'] : '';
+    }
+    
+    public function getIdByNamaKelurahan($nama_kelurahan)
+    {
+        $kelurahan = $this->where('nama_kelurahan', $nama_kelurahan)->first();
+
+        return $kelurahan ? $kelurahan['id_kelurahan'] : null;
+    }
+    
     public function getLatById($id_kelurahan)
     {
         $kelurahan = $this->find($id_kelurahan);

@@ -371,7 +371,17 @@ while (true) { ?>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="font-weight-bold text-utama">Pembagian Cluster Kelurahan</h6>
+        <div class="row">
+            <div class="col">
+                <h6 class="font-weight-bold text-utama">Pembagian Cluster Kelurahan</h6>
+            </div>
+            <div class="d-flex justify-content-end mr-3">
+                <form method=post action="<?= base_url('/dashboard/identifikasi/add_identifikasi') ?>">
+                    <input type="hidden" name="finalCluster" value="<?php echo htmlentities(json_encode($final_cluster)); ?>">
+                    <button type="submit" class="btn btn-sm btn-outline-primary ">Simpan</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="card-body">
         <?php
@@ -418,15 +428,6 @@ while (true) { ?>
         </div>
     </div>
 </div>
-
-<?php
-session()->set('lat_c1', $lat_c1);
-session()->set('long_c1', $lon_c1);
-session()->set('lat_c2', $lat_c2);
-session()->set('long_c2', $lon_c2);
-session()->set('lat_c3', $lat_c3);
-session()->set('long_c3', $lon_c3);
-?>
 
 <?= $this->endSection(); ?>
 

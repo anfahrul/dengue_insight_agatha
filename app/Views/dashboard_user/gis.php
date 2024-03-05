@@ -28,44 +28,15 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Peta Sebaran</h1>
-    <!-- <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(-3.9743961, 122.4471867),
-                zoom: 12
-            });
-
-        }
-    </script> -->
     <div id="map"> </div>
-    <!-- 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD37zmyOf10mshnWVckhuXEDoT2hRtyghM&callback=initMap">
-    </script> -->
 
     <?= $this->endSection(); ?>
 
     <?= $this->section('script'); ?>
-    <?php
-    $lat_c1 = $lat_c1;
-    $long_c1 = $long_c1;
-    $lat_c2 = $lat_c2;
-    $long_c2 = $long_c2;
-    $lat_c3 = $lat_c3;
-    $long_c3 = $long_c3;
-    
-    $kordinatc1 = array_combine($lat_c1, $long_c1);
-    $kordinatc2 = array_combine($lat_c2, $long_c2);
-    $kordinatc3 = array_combine($lat_c3, $long_c3);
-    // dd($kordinatc2);
-
-    ?>
-
-    <!-- <script type="text/javascript" src="./us-states.js"></script> -->
-    <script src="<?= base_url() ?>/us-states.js"></script>
 
     <script type="text/javascript">
 
-        const map = L.map('map').setView([37.8, -96], 4);
+        const map = L.map('map').setView([-3.992350142513427, 122.52349485683202], 12);
 
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -82,22 +53,16 @@
         };
 
         info.update = function (props) {
-            const contents = props ? `<b>${props.name}</b><br />${props.density} people / mi<sup>2</sup>` : 'Hover over a state';
-            this._div.innerHTML = `<h4>US Population Density</h4>${contents}`;
+            const contents = props ? `<b>${props.WADMKD}</b><br />Cluster ${props.cluster}` : 'Hover over a state';
+            this._div.innerHTML = `<h5>Cluster Sebaran DBD Kota Kendari</h5>${contents}`;
         };
 
         info.addTo(map);
 
-
         // get color depending on population density value
         function getColor(d) {
-            return d > 1000 ? '#800026' :
-                d > 500  ? '#BD0026' :
-                d > 200  ? '#E31A1C' :
-                d > 100  ? '#FC4E2A' :
-                d > 50   ? '#FD8D3C' :
-                d > 20   ? '#FEB24C' :
-                d > 10   ? '#FED976' : '#FFEDA0';
+            return d == 1 ? '#4BC0C0' :
+                d == 2   ? '#FF6384' : '#FFCD56';
         }
 
         function style(feature) {
@@ -107,7 +72,7 @@
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: getColor(feature.properties.density)
+                fillColor: getColor(feature.properties.cluster)
             };
         }
 
@@ -118,7 +83,7 @@
                 weight: 5,
                 color: '#666',
                 dashArray: '',
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             });
 
             layer.bringToFront();
@@ -126,46 +91,58 @@
             info.update(layer.feature.properties);
         }
 
-        /* global statesData */
-        const geojson = L.geoJson(statesData, {
-            style,
-            onEachFeature
-        }).addTo(map);
+        /* global data */
+        $.getJSON("<?php echo base_url('geo/') . $lastInsertedGeoLocationFile ?>", function(result) {
+            var clusterInfo = {};
+            <?php
+                foreach ($lastIdentificationHistory as $record) {
+                    $objectId = $modelKelurahan->getObjectIdById($record['id_kelurahan']);
+            ?>
+                    clusterInfo["<?php echo addslashes($objectId); ?>"] = <?php echo addslashes($record['cluster']); ?>;
+            <?php
+                }
+            ?>
 
-        function resetHighlight(e) {
-            geojson.resetStyle(e.target);
-            info.update();
-        }
-
-        function zoomToFeature(e) {
-            map.fitBounds(e.target.getBounds());
-        }
-
-        function onEachFeature(feature, layer) {
-            layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
-                click: zoomToFeature
+            result.features.forEach(function(element, index) {
+                var cluster = clusterInfo[element.properties.OBJECTID];
+                element.properties.cluster = parseInt(cluster, 10);
             });
-        }
 
-        map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+            const geojson = L.geoJson(result, {
+                style,
+                onEachFeature: function(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight,
+                        click: zoomToFeature
+                    });
+                }
+            }).addTo(map);
+            
+            function resetHighlight(e) {
+                geojson.resetStyle(e.target);
+                info.update();
+            }
+    
+            function zoomToFeature(e) {
+                map.fitBounds(e.target.getBounds());
+            }
+        });
 
+        map.attributionControl.addAttribution('Data DBD Kota Kendari &copy; <a href="http://test.gov/">KendariGov</a>');
 
         const legend = L.control({position: 'bottomright'});
 
         legend.onAdd = function (map) {
 
             const div = L.DomUtil.create('div', 'info legend');
-            const grades = [0, 10, 20, 50, 100, 200, 500, 1000];
+            const grades = [1, 2, 3];
             const labels = [];
-            let from, to;
-
+            let label;
+            
             for (let i = 0; i < grades.length; i++) {
-                from = grades[i];
-                to = grades[i + 1];
-
-                labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+                label = grades[i];
+                labels.push(`<i style="background:${getColor(label)}"></i>Cluster ${label}`);
             }
 
             div.innerHTML = labels.join('<br>');
