@@ -86,7 +86,7 @@
                     </td>
                 </tr>
             </table>
-            <button class="btn btn-primary">Simpan Cluster</button>
+            <button class="btn btn-primary">Simpan Centroid</button>
         </form>
     </div>
 </div>

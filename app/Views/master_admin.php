@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>
-        <?= $title ?> - Puskesmas Hoga
+        <?= $title ?> - Dengue Insight
     </title>
 
     <!-- Custom fonts for this template-->

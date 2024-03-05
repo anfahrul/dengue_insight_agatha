@@ -18,7 +18,7 @@ use PharIo\Manifest\Url;
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login Puskesmas Hoga</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                 </div>
                                 <?php if (session()->get('error')) : ?>
                                     <div class="alert alert-danger" role="alert">

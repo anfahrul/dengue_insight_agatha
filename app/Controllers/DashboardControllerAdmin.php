@@ -618,14 +618,4 @@ class DashboardControllerAdmin extends BaseController
         return view('dashboard_admin/gis_admin', $data);
     }
 
-    public function view_file_admin()
-    {
-        $data = [
-            'title' => 'View File Bulan',
-            'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Progres->findAll(),
-        ];
-
-        return view('dashboard_admin/view_file', $data);
-    }
 }

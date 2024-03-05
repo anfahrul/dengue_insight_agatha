@@ -68,17 +68,6 @@ class DashboardController extends BaseController
         ];
         return view('dashboard_user/profile_user', $data);
     }
-
-    public function data_balita()
-    {
-        $data = [
-            'title' => 'Data Balita',
-            'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Data->findAll(),
-            'cluster' => $this->m_Cluster->first(),
-        ];
-        return view('dashboard_user/data_balita', $data);
-    }
     
     public function data_dbd()
     {
@@ -376,14 +365,6 @@ class DashboardController extends BaseController
     }
 
 
-    public function klasifikasi_user()
-    {
-        $data = [
-            'title' => 'Klasifikasi'
-        ];
-        return view('dashboard_user/klasifikasi_user', $data);
-    }
-
     public function peta_sebaran_user()
     {
         $lastInsertedGeoLocationFile = $this->m_GeoLocationFile->getOrderById()
@@ -406,16 +387,5 @@ class DashboardController extends BaseController
         ];
 
         return view('dashboard_user/gis', $data);
-    }
-
-    public function view_file1()
-    {
-        $data = [
-            'title' => 'View File Bulan',
-            'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_Progres->findAll(),
-        ];
-
-        return view('dashboard_user/view_file_bulan', $data);
     }
 }

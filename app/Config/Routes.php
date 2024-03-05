@@ -60,9 +60,7 @@ $routes->group('', ['filter' => 'authFilter'], function ($routes) {
     $routes->get('/dashboard/identifikasi', 'DashboardController::identifikasi_user');
     $routes->post('/dashboard/identifikasi/add_identifikasi', 'DashboardController::identifikasi_add');
 
-    $routes->get('/dashboard/klasifikasi', 'DashboardController::klasifikasi_user');
     $routes->get('/dashboard/peta/sebaran', 'DashboardController::peta_sebaran_user');
-    $routes->get('/dashboard/view/file/bulan', 'DashboardController::view_file1');
 });
 
 //  route dashboar admin
@@ -108,7 +106,6 @@ $routes->group('admin', ['filter' => 'authFilter'], function ($routes) {
 
     $routes->get('dashboard/hasil/cluster', 'DashboardControllerAdmin::hasil_cluster');
     $routes->get('peta/dbd', 'DashboardControllerAdmin::peta_sebaran');
-    $routes->get('dashboard/view/file', 'DashboardControllerAdmin::view_file_admin');
 });
 
 /*
