@@ -328,7 +328,7 @@ class DashboardController extends BaseController
         $data = [
             'title' => 'Identifikasi',
             'user' => $this->m_User->where('username', session()->get('username'))->first(),
-            'data' => $this->m_DataDBD->where('id_tahun', 4)->findAll(),
+            'data' => $this->m_DataDBD->findAllGroupByIdKelurahan(),
             'cluster' => $lastClusterInserted,
             'modelKelurahan' => $this->m_Kelurahan,
         ];
